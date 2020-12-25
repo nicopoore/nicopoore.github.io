@@ -1,38 +1,263 @@
+/* #region General */
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*
+
+* {
+  outline: 2px solid white;
+}
+
+/**/
+
+* {
+  --dark-blue: #a1b6c7;
+  --mid-blue: #d9e4ed;
+  --light-blue: #e8f0f7;
+  --black: #090909;
+  color: var(--black);
+  scroll-behavior: smooth;
+}
+
 .App {
+  width: 75%;
+  margin: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.Main {
+  position: absolute;
+  width: 56.25%;
+  margin-left: 18.75%;
+}
+
+.chivo {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.round {
+  border-radius: 50%
+}
+
+.no-select {
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.divider-1 {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to right bottom, var(--light-blue) 49%, var(--mid-blue) 50%), linear-gradient(-50deg, var(--mid-blue) 16px, var(--light-blue) 0);
+}
+
+.divider-2 {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to left bottom, var(--mid-blue) 49%, var(--light-blue) 50%), linear-gradient(-50deg, var(--light-blue) 16px, var(--mid-blue) 0);
+}
+
+/*#endregion*/
+
+/* #region Sidebar */
+
+.Sidebar {
+  background-color: var(--dark-blue);
+  position: fixed;
+  width: 18.75%;
+  height: 100vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Sidebar Main */
+
+.sidebarMain {
+  margin-top: 6rem;
+  margin-bottom: -16rem;
+  transition: margin-top .5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#sidebarPic {
+  width:9rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#sidebarName {
+  font-size: 2.5rem;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebarSubtitle {
+  font-size: 1rem;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shownMain {
+  opacity: 1;
+  transition: opacity .8s;
 }
+
+.hiddenMain {
+  margin-top: 0;
+  opacity: 0;
+}
+
+/* Sidebar Navigation */
+
+.sidebarList {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  margin-top: 22rem;
+}
+
+.sidebarItem {
+  position: relative;
+  margin: .8rem;
+}
+
+.sidebarItem a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.sidebarItem a:hover {
+  color: #fff;
+  transition: color .1s;
+}
+
+.sidebarItem a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -6px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.sidebarItem a:hover::after {
+  width: 10%; 
+  left: 45%;
+}
+
+.activeSection {
+  color: white !important;
+}
+
+/* #endregion */
+
+/* #region About */
+
+.About {
+  text-align: center;
+  background-color: var(--light-blue);
+  height: 100vh;
+  scroll-snap-align: start
+}
+
+#aboutPic {
+  width: 200px;
+  margin-top: 15%;
+}
+
+#mainTitle {
+  font-size: 5rem;
+  margin: 1rem auto .3rem;
+}
+
+#mainSubtitle {
+  font-size: 1.5rem;
+  margin: 0 auto 5rem;
+}
+
+.aboutParagraph {
+  width: 65%;
+  margin: 2% auto;
+}
+
+/* #endregion */
+
+/* #region Experience */
+
+.Experience {
+  background: var(--mid-blue);
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+#experienceTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 25% 15% 0;
+}
+
+.ExperienceItem {
+  width: 76%;
+  margin: auto;
+  position: relative;
+  list-style-type: none;
+}
+
+#expItemMain {
+  font-size: 1.375rem;
+  margin-bottom: 0.4rem;
+}
+
+#expItemTitle {
+  font-weight: 400;
+}
+
+.ExperienceItem::before {
+  background: #fff;
+  width: 3px;
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 0px;
+  bottom: -25px;
+}
+
+.ExperienceItem::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: #c7a5d1;
+  border: 3px solid white;
+  border-radius: 50%;
+  left: -35px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.ExperienceItem:last-child::before {
+  bottom: 0;
+}
+
+#expItemSubtitle {
+  font-style: italic;
+}
+
+#expItemDates {
+  margin: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #777;
+}
+
+
+
+/* #endregion */
+
