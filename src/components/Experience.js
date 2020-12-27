@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ExperienceItem from './ExperienceItem'
+import TimelineItem from './TimelineItem'
 
 class Experience extends Component {
   constructor(props) {
@@ -9,11 +9,11 @@ class Experience extends Component {
 
   renderExperiences = (i, arr) => {
     return (
-      <ExperienceItem
+      <TimelineItem
+        id={arr[i].id}
         title={arr[i].title}
         subtitle={arr[i].subtitle}
-        from={arr[i].from}
-        to={arr[i].to}
+        date={arr[i].date}
         desc={arr[i].desc}
       />
     )
@@ -23,7 +23,7 @@ class Experience extends Component {
     const rendered = this.props.experienceArray.reverse().map((_, i, arr) => this.renderExperiences(i, arr))
     return (
       <div className="Experience" id="work">
-        <h2 class="playfair" id="experienceTitle">Work Experience</h2>
+        <h2 class="playfair subheading" id="experienceTitle">Work Experience</h2>
         <ul>
           {rendered}
         </ul>
@@ -36,7 +36,7 @@ class Experience extends Component {
 
 const mapStateToProps = (state) => ({
   showSidebarMain: state.showSidebarMain,
-  experienceArray: state.experienceArray
+  experienceArray: state.timelines.experienceArray
 })
 
 export default connect(mapStateToProps)(Experience)

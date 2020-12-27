@@ -38,13 +38,13 @@ const Sidebar = (props) => {
           </a>
         </li>
         <li className="sidebarItem chivo">
-          <a href="#projects" className={props.activeSection === 'projects-link' ? 'activeSection' : ''} id="projects-link">
-            Personal Projects
+          <a href="#skills" className={props.activeSection === 'skills-link' ? 'activeSection' : ''} id="skills-link">
+            Skills
           </a>
         </li>
         <li className="sidebarItem chivo">
-          <a href="#skills" className={props.activeSection === 'skills-link' ? 'activeSection' : ''} id="skills-link">
-            Skills
+          <a href="#projects" className={props.activeSection === 'projects-link' ? 'activeSection' : ''} id="projects-link">
+            Personal Projects
           </a>
         </li>
         <li className="sidebarItem chivo">

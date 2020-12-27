@@ -20,25 +20,30 @@ class About extends Component {
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
     const scrolled = winScroll / height
 
-    console.log(scrolled)
 
-    if (scrolled <= .3) {
+    if (scrolled <= .2) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: false,
         activeSection: 'about-link'
       })
-    } else if (scrolled >= .33 && scrolled < .66) {
+    } else if (scrolled >= .25 && scrolled < .50) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'work-link'
       })
-    } else if (scrolled >= .66 && scrolled < 1) {
+    } else if (scrolled >= .50 && scrolled < .75) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'education-link'
+      })
+    } else if (scrolled >= .75 && scrolled < 1) {
+      this.props.dispatch({
+        type: 'TOGGLE_SECTION',
+        showSidebarMain: true,
+        activeSection: 'skills-link'
       })
     }
   }
