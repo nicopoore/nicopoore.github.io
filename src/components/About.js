@@ -51,10 +51,10 @@ class About extends Component {
   render() {
     return (
       <div className="About main-section" id="about">
-        <img src="profile.jpg" className="round no-select" id="aboutPic" />
-        <h1 class="playfair no-select" id="mainTitle">Nicolás Cedric Poore</h1>
-        <h2 class="chivo no-select sm-hidden lg-shown" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
-        <h2 class="chivo no-select sm-shown lg-hidden" id="mainSubtitle">Full Stack Developer<br/>Buenos Aires, Argentina</h2>
+        <img src="profile.jpg" className="round no-select" id="aboutPic" alt="Nicolas Poore" />
+        <h1 className="playfair no-select" id="mainTitle">Nicolás Cedric Poore</h1>
+        <h2 className="chivo no-select sm-hidden lg-shown" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
+        <h2 className="chivo no-select sm-shown lg-hidden" id="mainSubtitle">Full Stack Developer<br/>Buenos Aires, Argentina</h2>
         <p className="aboutParagraph chivo">
           Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus).  
         </p>

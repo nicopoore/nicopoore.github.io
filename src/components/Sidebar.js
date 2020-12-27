@@ -15,7 +15,7 @@ class Sidebar extends Component {
     return (
       <div className="Sidebar" id={this.props.showSidebarMobile === true ? "sidebarActive" : ""}>
         <div className={this.props.showSidebarMain === true ? "sidebarMain hidden-xs shownMain" : "sidebarMain hidden-xs hiddenMain"}>
-          <img src="profile.jpg" className="text-center round no-select" id="sidebarPic" />
+          <img src="profile.jpg" className="text-center round no-select" id="sidebarPic" alt="Nicolas Poore" />
           <h3 className="text-center playfair" id="sidebarName">Nicolás C. Poore</h3>
           <p className="text-center chivo sidebarSubtitle">Full Stack Developer</p>
           <p className="text-center chivo sidebarSubtitle">Buenos Aires, Argentina</p>

@@ -4,13 +4,11 @@ import SkillItem from './SkillItem'
 import LangItem from './LangItem'
 
 class Skills extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   renderSkill = (item) => {
     return (
       <SkillItem 
+        key={item.code}
         name={item.name}
         level={item.level}
       />
@@ -20,6 +18,7 @@ class Skills extends Component {
   renderLang = (item) => {
     return (
       <LangItem 
+        key={item.code}
         name={item.lang}
         fluency={item.fluency}
         level={item.level}

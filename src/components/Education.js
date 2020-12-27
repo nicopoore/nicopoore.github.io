@@ -3,25 +3,23 @@ import { connect } from 'react-redux'
 import TimelineItem from './TimelineItem'
 
 class Education extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  renderFormal = (i, arr) => {
+  renderEducation = (item) => {
     return (
       <TimelineItem
-        id={arr[i].id}
-        title={arr[i].title}
-        subtitle={arr[i].subtitle}
-        date={arr[i].date}
-        desc={arr[i].desc}
+        id={item.id}
+        key={item.id}
+        title={item.title}
+        subtitle={item.subtitle}
+        date={item.date}
+        desc={item.desc}
       />
     )
   }
 
   render() {
-    const renderedFormal = this.props.formalEdArray.reverse().map((_, i, arr) => this.renderFormal(i, arr))
-    const renderedPersonal = this.props.personalEdArray.reverse().map((_, i, arr) => this.renderFormal(i, arr))
+    const renderedFormal = this.props.formalEdArray.reverse().map((_, i, arr) => this.renderEducation(arr[i]))
+    const renderedPersonal = this.props.personalEdArray.reverse().map((_, i, arr) => this.renderEducation(arr[i]))
     return (
       <div className="Education main-section" id="education">
         <h2 className="playfair subheading ed-sub" id="formalEdTitle">Formal Education</h2>

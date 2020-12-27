@@ -17,7 +17,6 @@ class Hamburger extends Component {
   }
 
   render() {
-    console.log(this.props.name)
     return (
       <span className="lg-hidden sm-shown" id="hamburger-span" onClick={this.handleClick}>
         <FontAwesomeIcon icon={faBars} />

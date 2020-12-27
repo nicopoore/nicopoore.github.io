@@ -2,8 +2,6 @@ import './App.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { Sidebar, About, Experience, Education, Skills, Hamburger } from './components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const defaultState = {
   lang: 'en',
@@ -177,73 +175,6 @@ const defaultState = {
         level: "basic"
       }
     ],
-
-
-    /*
-    technical: {
-      advanced: [
-        {
-          code: "htmlcss",
-          name: "HTML5/CSS3",
-          keywords: [
-            "programming",
-            "frontend"
-          ],
-          level: 85
-        },
-        {
-          code: "js",
-          name: "JavaScript",
-          keywords: [
-            "programming",
-            "frontend",
-            "backend"
-          ],
-          level: 85
-        },
-        {
-          code: "react",
-          name: "ReactJS/Redux",
-          keywords: [
-            "programming",
-            "frontend"
-          ],
-          level: 80
-        },
-        {
-          code: "ps",
-          name: "Adobe Photoshop",
-          keywords: [
-            "design",
-            "tools"
-          ],
-          level: 90
-        }
-      ],
-      intermediate: [
-        {
-          code: "node",
-          name: "NodeJS/Express",
-          keywords: [
-            "programming",
-            "backend"
-          ],
-          level: 70
-        },
-        {
-          code: "mongo",
-          name: "MongoDB/Mongoose",
-          keywords: [
-            "programming",
-            "backend",
-            "databases"
-          ],
-          level: 75
-        }
-      ]
-    },*/
-
-
     languages: [
       {
         code: "es",
@@ -320,11 +251,11 @@ const App = () => {
         <Sidebar />
         <div className="Main">
           <About />
-          <div class="divider-1"></div>
+          <div className="divider-1"></div>
           <Experience />
-          <div class="divider-2"></div>
+          <div className="divider-2"></div>
           <Education />
-          <div class="divider-1"></div>
+          <div className="divider-1"></div>
           <Skills />
         </div>
         

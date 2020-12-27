@@ -2,12 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class SkillItem extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
-    console.log(this.props.name)
     return (
         <p className="chivo">
           - {this.props.name}
@@ -16,8 +12,4 @@ class SkillItem extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-export default connect(mapStateToProps)(SkillItem)
+export default connect(null)(SkillItem)

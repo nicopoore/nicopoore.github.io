@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class LangItem extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   fluencyColor = (level) => {
     if (level >= 66) {
@@ -28,8 +25,4 @@ class LangItem extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-export default connect(mapStateToProps)(LangItem)
+export default connect(null)(LangItem)

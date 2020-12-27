@@ -3,27 +3,25 @@ import { connect } from 'react-redux'
 import TimelineItem from './TimelineItem'
 
 class Experience extends Component {
-  constructor(props) {
-    super(props)
-  }
 
-  renderExperiences = (i, arr) => {
+  renderExperiences = (item) => {
     return (
       <TimelineItem
-        id={arr[i].id}
-        title={arr[i].title}
-        subtitle={arr[i].subtitle}
-        date={arr[i].date}
-        desc={arr[i].desc}
+        id={item.id}
+        key={item.id}
+        title={item.title}
+        subtitle={item.subtitle}
+        date={item.date}
+        desc={item.desc}
       />
     )
   }
 
   render() {
-    const rendered = this.props.experienceArray.reverse().map((_, i, arr) => this.renderExperiences(i, arr))
+    const rendered = this.props.experienceArray.reverse().map((_, i, arr) => this.renderExperiences(arr[i]))
     return (
       <div className="Experience main-section" id="work">
-        <h2 class="playfair subheading" id="experienceTitle">Work Experience</h2>
+        <h2 className="playfair subheading" id="experienceTitle">Work Experience</h2>
         <ul>
           {rendered}
         </ul>
