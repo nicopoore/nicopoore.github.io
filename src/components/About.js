@@ -50,12 +50,16 @@ class About extends Component {
 
   render() {
     return (
-      <div className="About" id="about">
+      <div className="About main-section" id="about">
         <img src="profile.jpg" className="round no-select" id="aboutPic" />
         <h1 class="playfair no-select" id="mainTitle">Nicolás Cedric Poore</h1>
-        <h2 class="chivo no-select" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
+        <h2 class="chivo no-select sm-hidden lg-shown" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
+        <h2 class="chivo no-select sm-shown lg-hidden" id="mainSubtitle">Full Stack Developer<br/>Buenos Aires, Argentina</h2>
         <p className="aboutParagraph chivo">
-          Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus). Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC. 
+          Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus).  
+        </p>
+        <p className="aboutParagraph chivo">
+        Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC.
         </p>
         <p className="aboutParagraph chivo">
           On my free time I love watching movies (you can find me on Letterboxd!), playing the piano (and sucking at the guitar), programming, and learning.
@@ -64,25 +68,6 @@ class About extends Component {
     )
   }
 }
-
-/*const About = (props) => {
-  return (
-    <div className="About">
-      <img src="profile.jpg" className="roundPic" id="aboutPic" />
-      <h1 id="mainTitle">Nicolás Cedric Poore</h1>
-      <h2 id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
-      <p className="aboutParagraph">
-        Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus). Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC. 
-      </p>
-      <p className="aboutParagraph">
-        On my free time I love watching movies (you can find me on Letterboxd!), playing the piano (and sucking at the guitar), programming, and learning.
-      </p>
-      <button onClick={props.dispatch({type: 'TOGGLE_SIDEBAR_MAIN', showSidebarMain: !props.showSidebarMain})} />
-    </div>
-  )
-}
-
-/**/
 
 const mapStateToProps = (state) => ({
   showSidebarMain: state.showSidebarMain

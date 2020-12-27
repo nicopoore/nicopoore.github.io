@@ -22,7 +22,7 @@ class Experience extends Component {
   render() {
     const rendered = this.props.experienceArray.reverse().map((_, i, arr) => this.renderExperiences(i, arr))
     return (
-      <div className="Experience" id="work">
+      <div className="Experience main-section" id="work">
         <h2 class="playfair subheading" id="experienceTitle">Work Experience</h2>
         <ul>
           {rendered}

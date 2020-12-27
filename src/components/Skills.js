@@ -32,10 +32,9 @@ class Skills extends Component {
     const advancedSkills = this.props.technical.filter(skill => skill.level === "advanced").map((_, i, arr) => this.renderSkill(arr[i]))
     const intermediateSkills = this.props.technical.filter(skill => skill.level === "intermediate").map((_, i, arr) => this.renderSkill(arr[i]))
     const basicSkills = this.props.technical.filter(skill => skill.level === "basic").map((_, i, arr) => this.renderSkill(arr[i]))
-    //const techSkills = Object.keys(this.props.technical).map(key => this.props.technical[key].map(skill => this.renderSkill(skill, key)))
     const langs = this.props.languages.map((_, i, arr) => this.renderLang(arr[i]))
     return (
-      <div className="Skills" id="skills">
+      <div className="Skills main-section" id="skills">
         <h2 className="playfair subheading" id="skill-sub">Skills</h2>
 
         <div className="skill-div chivo" id="techSkills">

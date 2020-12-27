@@ -23,7 +23,7 @@ class Education extends Component {
     const renderedFormal = this.props.formalEdArray.reverse().map((_, i, arr) => this.renderFormal(i, arr))
     const renderedPersonal = this.props.personalEdArray.reverse().map((_, i, arr) => this.renderFormal(i, arr))
     return (
-      <div className="Education" id="education">
+      <div className="Education main-section" id="education">
         <h2 className="playfair subheading ed-sub" id="formalEdTitle">Formal Education</h2>
         <ul>
           {renderedFormal}

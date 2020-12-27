@@ -1,13 +1,14 @@
 import './App.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Sidebar, About, Experience, Education, Skills } from './components'
+import { Sidebar, About, Experience, Education, Skills, Hamburger } from './components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const defaultState = {
   lang: 'en',
   darkMode: false,
-  showSidebar: true,
-  showSidebarToggle: false,
+  showSidebarMobile: false,
   showSidebarMain: false,
   activeSection: 'about-link',
   timelines: {
@@ -273,8 +274,7 @@ const defaultState = {
         desc: "Basic communicational proficiency in French, certified by the Alliance française."
       }
     ]
-  },
-  skillsFilter: []
+  }
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -292,7 +292,7 @@ const rootReducer = (state = defaultState, action) => {
     case 'TOGGLE_SIDEBAR':
       return {
         ...state,
-        showSidebar: action.showSidebar
+        showSidebarMobile: action.showSidebarMobile
       }
     case 'TOGGLE_SIDEBAR_BUTTON':
       return {
@@ -316,6 +316,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
+        <Hamburger />
         <Sidebar />
         <div className="Main">
           <About />

@@ -15,10 +15,10 @@ class TimelineItem extends Component {
   }
 
   render() {
-    console.log(this.props.id)
     return (
       <li className="TimelineItem" id={this.props.id}>
-        <p class="chivo timelineItemMain"><span className="timelineItemTitle">{this.props.title}</span> — <span className="timelineItemSubtitle">{this.props.subtitle}</span></p>
+        <p class="chivo timelineItemMain sm-hidden lg-shown"><span className="timelineItemTitle">{this.props.title}</span> — <span className="timelineItemSubtitle">{this.props.subtitle}</span></p>
+        <p class="chivo timelineItemMain sm-shown lg-hidden"><span className="timelineItemTitle">{this.props.title}</span><br /><span className="timelineItemSubtitle">{this.props.subtitle}</span></p>
         <p class="chivo timelineItemDates">{this.date()}</p>
         <p class="chivo timelineItemDesc">{this.props.desc}</p>
       </li>
