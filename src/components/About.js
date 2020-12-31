@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 
 class About extends Component {
   constructor(props) {
@@ -27,30 +29,45 @@ class About extends Component {
         showSidebarMain: false,
         activeSection: 'about-link'
       })
-    } else if (scrolled >= .25 && scrolled < .50) {
+    } else if (scrolled >= .2 && scrolled < .4) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'work-link'
       })
-    } else if (scrolled >= .50 && scrolled < .75) {
+    } else if (scrolled >= .4 && scrolled < .6) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'education-link'
       })
-    } else if (scrolled >= .75 && scrolled < 1) {
+    } else if (scrolled >= .6 && scrolled < .8) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'skills-link'
       })
+    } else if (scrolled >= .8 && scrolled < 1) {
+      this.props.dispatch({
+        type: 'TOGGLE_SECTION',
+        showSidebarMain: true,
+        activeSection: 'projects-link'
+      })
     }
+  }
+
+  toggleDarkMode = () => {
+    document.documentElement.style.setProperty('--root-backg', this.props.darkMode ? 'white' : '#101010')
+    this.props.dispatch({
+      type: 'TOGGLE_DARKMODE',
+      darkMode: !this.props.darkMode
+    })
   }
 
   render() {
     return (
       <div className="About main-section" id="about">
+        <button className="toggleDarkButton" onClick={this.toggleDarkMode}><FontAwesomeIcon icon={this.props.darkMode ? faSun : faMoon} /></button>
         <img src="profile.jpg" className="round no-select" id="aboutPic" alt="Nicolas Poore" />
         <h1 className="playfair no-select" id="mainTitle">Nicolás Cedric Poore</h1>
         <h2 className="chivo no-select sm-hidden lg-shown" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
@@ -70,6 +87,7 @@ class About extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  darkMode: state.darkMode,
   showSidebarMain: state.showSidebarMain
 })
 

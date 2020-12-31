@@ -1,7 +1,8 @@
 import './App.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Sidebar, About, Experience, Education, Skills, Hamburger } from './components'
+import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects } from './components'
+import AppChild from './components/AppChild'
 
 const defaultState = {
   lang: 'en',
@@ -205,7 +206,170 @@ const defaultState = {
         desc: "Basic communicational proficiency in French, certified by the Alliance française."
       }
     ]
-  }
+  },
+  projects: [
+    {
+      id: 1,
+      name: "Technical Documentation Page",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript"
+      ],
+      url: "https://nicopoore.github.io/technical-documentation/",
+      repo: "https://github.com/nicopoore/technical-documentation"
+    },
+    {
+      id: 2,
+      name: "Landing Page",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "bootstrap"
+      ],
+      url: "https://nicopoore.github.io/landing-page/",
+      repo: "https://github.com/nicopoore/landing-page"
+    },
+    {
+      id: 3,
+      name: "Random Quote Machine",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "bootstrap",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/random-quote-machine/",
+      repo: "https://github.com/nicopoore/random-quote-machine"
+    },
+    {
+      id: 4,
+      name: "Markdown Previewer",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/markdown-previewer/",
+      repo: "https://github.com/nicopoore/markdown-previewer"
+    },
+    {
+      id: 5,
+      name: "Drum Machine",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/drum-machine/",
+      repo: "https://github.com/nicopoore/drum-machine"
+    },
+    {
+      id: 6,
+      name: "Calculator",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/react-calculator/",
+      repo: "https://github.com/nicopoore/react-calculator"
+    },
+    {
+      id: 7,
+      name: "Pomodoro Timer",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/react-pomodoro/",
+      repo: "https://github.com/nicopoore/react-pomodoro"
+    },
+    {
+      id: 8,
+      name: "Timestamp Microservice",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://evening-wave-75791.herokuapp.com/",
+      repo: "https://github.com/nicopoore/timestamp-service"
+    },
+    {
+      id: 9,
+      name: "Request Header Parser",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://pure-brushlands-16955.herokuapp.com/",
+      repo: "https://github.com/nicopoore/request-header-parser"
+    },
+    {
+      id: 10,
+      name: "URL Shortener",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express",
+        "mongodb",
+        "mongoose"
+      ],
+      url: "https://mysterious-hamlet-01922.herokuapp.com/",
+      repo: "https://github.com/nicopoore/url-shortener"
+    },
+    {
+      id: 11,
+      name: "File Metadata Parser",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://enigmatic-fjord-43448.herokuapp.com/",
+      repo: "https://github.com/nicopoore/file-metadata"
+    },
+    {
+      id: 12,
+      name: "Exercise Tracker",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express",
+        "mongodb",
+        "mongoose"
+      ],
+      url: "https://secret-cove-94553.herokuapp.com/",
+      repo: "https://github.com/nicopoore/exercise-tracker"
+    }
+  ],
+  projectFilter: []
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -225,16 +389,26 @@ const rootReducer = (state = defaultState, action) => {
         ...state,
         showSidebarMobile: action.showSidebarMobile
       }
-    case 'TOGGLE_SIDEBAR_BUTTON':
-      return {
-        ...state,
-        showSidebarToggle: action.showSidebarToggle
-      }
     case 'TOGGLE_SECTION':
       return {
         ...state,
         showSidebarMain: action.showSidebarMain,
         activeSection: action.activeSection
+      }
+    case 'ADD_FILTER':
+      return {
+        ...state,
+        projectFilter: [...state.projectFilter, action.tag]
+      }
+    case 'REMOVE_FILTER':
+      return {
+        ...state,
+        projectFilter: action.projectFilter
+      }
+    case 'RESET_FILTER':
+      return {
+        ...state,
+        projectFilter: []
       }
     default:
       return state
@@ -246,19 +420,8 @@ const store = createStore(rootReducer)
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Hamburger />
-        <Sidebar />
-        <div className="Main">
-          <About />
-          <div className="divider-1"></div>
-          <Experience />
-          <div className="divider-2"></div>
-          <Education />
-          <div className="divider-1"></div>
-          <Skills />
-        </div>
-        
+      <div className="AppWrap">
+        <AppChild />
       </div>
     </Provider>
   );

@@ -18,7 +18,7 @@ class Experience extends Component {
   }
 
   render() {
-    const rendered = this.props.experienceArray.reverse().map((_, i, arr) => this.renderExperiences(arr[i]))
+    const rendered = this.props.experienceArray.reverse().map(item => this.renderExperiences(item))
     return (
       <div className="Experience main-section" id="work">
         <h2 className="playfair subheading" id="experienceTitle">Work Experience</h2>
