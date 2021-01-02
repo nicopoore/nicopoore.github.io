@@ -69,26 +69,23 @@ class About extends Component {
       <div className="About main-section" id="about">
         <button className="toggleDarkButton" onClick={this.toggleDarkMode}><FontAwesomeIcon icon={this.props.darkMode ? faSun : faMoon} /></button>
         <img src="profile.jpg" className="round no-select" id="aboutPic" alt="Nicolas Poore" />
-        <h1 className="playfair no-select" id="mainTitle">Nicolás Cedric Poore</h1>
-        <h2 className="chivo no-select sm-hidden lg-shown" id="mainSubtitle">Full Stack Developer &nbsp;|&nbsp;  Buenos Aires, Argentina</h2>
-        <h2 className="chivo no-select sm-shown lg-hidden" id="mainSubtitle">Full Stack Developer<br/>Buenos Aires, Argentina</h2>
-        <p className="aboutParagraph chivo">
-          Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus).  
-        </p>
-        <p className="aboutParagraph chivo">
-        Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC.
-        </p>
-        <p className="aboutParagraph chivo">
-          On my free time I love watching movies (you can find me on Letterboxd!), playing the piano (and sucking at the guitar), programming, and learning.
-        </p>
+        <h1 className="playfair no-select" id="mainTitle">Nicolás <span className="cedric">Cedric</span> Poore</h1>
+        <h2 className="chivo no-select sm-hidden lg-shown" id="mainSubtitle">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'} &nbsp;|&nbsp; Buenos Aires, Argentina</h2>
+        <h2 className="chivo no-select sm-shown lg-hidden" id="mainSubtitle">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'}<br/>Buenos Aires, Argentina</h2>
+
+        <p className="aboutParagraph chivo">{this.props.about[0]}</p>
+        <p className="aboutParagraph chivo">{this.props.about[1]}</p>
+        <p className="aboutParagraph chivo">{this.props.about[2]}</p>
+        
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
+  lang: state.lang,
   darkMode: state.darkMode,
-  showSidebarMain: state.showSidebarMain
+  about: state.about
 })
 
 export default connect(mapStateToProps)(About)

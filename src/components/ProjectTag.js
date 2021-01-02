@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faFilter } from '@fortawesome/free-solid-svg-icons'
 
 class ProjectItem extends Component {
 
@@ -28,8 +28,8 @@ class ProjectItem extends Component {
   render() {
     const type = this.props.type
     return (
-      <button onClick={this.addToFilter} className={`chivo piTag no-sselect ${this.props.tag}`}>
-        <span className={`piTagText ${type === 'add' && 'piTagTextIcon'}`}>{this.props.tag}</span>
+      <button onClick={this.addToFilter} className={`chivo piTag ${this.props.tag} ${type === 'remove' ? 'addedTag' : 'nonAddedTag'}`}>
+        {type === 'add' && <span className="piTagTextIcon"><FontAwesomeIcon icon={faFilter} /></span>} <span className={`piTagText`}>{this.props.tag}</span>
         {type === 'remove' && <span className="x-icon" onClick={this.removeFromFilter}><FontAwesomeIcon icon={faTimes} /></span>}
       </button>
     )

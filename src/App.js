@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects } from './components'
 import AppChild from './components/AppChild'
 
-const defaultState = {
-  lang: 'en',
-  darkMode: false,
-  showSidebarMobile: false,
-  showSidebarMain: false,
-  activeSection: 'about-link',
+const enContent = {
+  about: [
+    'Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus).',
+    'Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC.',
+    'On my free time I love watching movies (you can find me on Letterboxd!), playing the piano (and sucking at the guitar), programming, and learning.'
+  ],
   timelines: {
     experienceArray: [
       {
@@ -368,7 +368,386 @@ const defaultState = {
       url: "https://secret-cove-94553.herokuapp.com/",
       repo: "https://github.com/nicopoore/exercise-tracker"
     }
+  ]
+}
+
+const esContent = {
+  about: [
+    'Estudiante de Ingeniería en Sistemas en la Universidad de Buenos Aires, trabajando hace cerca de 3 años en el área de Ingenieria de la multinacional Kaeser Compresores como CADista de proyectos. Actualmente cursando Desarrollo Avanzado con JavaScript (incluyendo frameworks con un enfoque en stack MERN).',
+    'Cuento con tendencia al diseño y experiencia en la industria. Calificado en Solid Edge, AutoCAD, Desarrollo Web, Adobe Creative Suit. Certificado de desarrollo web básico Full Stack de FCC.',
+    'En mi tiempo libre me encanta ver peliculas (estoy en Letterboxd!), tocar el piano (o intentando tocar la guitarra), programar y aprender'
   ],
+  timelines: {
+    experienceArray: [
+      {
+        id: "juno",
+        title: "Juno Clases",
+        subtitle: "Desarrollo Web",
+        date: {
+          from: "Mar 2017",
+          to: "Mar 2018"
+        },
+        desc: "Co-Fundador y desarrollador de Juno, una plataforma online que conecta a personas con necesidad de clases particulares, con tutores, maestros y/o profesores disponibles cerca de ellos, para facilitarle a los alumnos la reserva, pago, y disfrute de clases en la comodidad de tu casa, y a los tutores a encontrar clases para dar."
+      },
+      {
+        id: "kaeser",
+        title: "Kaeser Kompressoren",
+        subtitle: "Ingeniería en Aplicaciones",
+        date: {
+          from: "Ene 2018",
+          to: "Oct 2020",
+        },
+        desc: "Planificación, diseño y ejecución de eficientes sistemas de aire comprimido, interpretando y plasmando eficientemente las ideas transmitidas por el equipo de trabajo y los clientes. Desarrollo del blog de ingeniería de Kaeser Kompressoren Argentina."
+      }
+    ],
+    formalEdArray: [
+      {
+        id: "sanlu",
+        title: "St. Luke's College",
+        subtitle: "Título Secundario en Exactas",
+        date: {
+          from: "2011",
+          to: "2016"
+        },
+        desc: ''
+      },
+      {
+        id: "uba",
+        title: "Universidad de Buenos Aires",
+        subtitle: "Ingeniería Informática",
+        date: {
+          from: "2017",
+          to: "Presente"
+        },
+        desc: ''
+      }
+    ],
+    personalEdArray: [
+      {
+        id: "igcse",
+        title: "University of Cambridge",
+        subtitle: "IGCSE",
+        date: "2015",
+        desc: "International Certificate of Education with Merit (Certificado Internacional de Educación con Méritos)"
+      },
+      {
+        id: "edIT",
+        title: "EducacionIT",
+        subtitle: "Desarrollador Avanzado JavaScript",
+        date: "2020",
+        desc: "Actualmente terminando la carrera de desarrollador avanzado full stack JavaScript en EducacionIT, que incluye cursos en React, Node, OOP, Progressive Web Apps, entre otros."
+      },
+      {
+        id: "fcc",
+        title: "freeCodeCamp",
+        subtitle: "Certificación de Desarrollador Full Stack",
+        date: "2020",
+        desc: "Incluyendo los siguientes módulos: Desarrollo Web Responsive, Algoritmos Javascript, Librerías Front End, APIs y Microservicios"
+      }
+    ]
+  },
+  skills: {
+    technical: [
+      {
+        code: "htmlcss",
+        name: "HTML5/CSS3",
+        keywords: [
+          "programming",
+          "frontend"
+        ],
+        level: "advanced"
+      },
+      {
+        code: "js",
+        name: "JavaScript",
+        keywords: [
+          "programming",
+          "frontend",
+          "backend"
+        ],
+        level: "advanced"
+      },
+      {
+        code: "react",
+        name: "ReactJS/Redux",
+        keywords: [
+          "programming",
+          "frontend"
+        ],
+        level: "advanced"
+      },
+      {
+        code: "ps",
+        name: "Adobe Photoshop",
+        keywords: [
+          "design",
+          "tools"
+        ],
+        level: "advanced"
+      },
+      {
+        code: "node",
+        name: "NodeJS",
+        keywords: [
+          "programming",
+          "backend"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "express",
+        name: "Express",
+        keywords: [
+          "programming",
+          "backend"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "mongo",
+        name: "MongoDB/Mongoose",
+        keywords: [
+          "programming",
+          "backend",
+          "databases"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "chai",
+        name: "Chai (QA)",
+        keywords: [
+          "programming",
+          "backend",
+          "QA"
+        ],
+        level: "basic"
+      },
+      {
+        code: "python",
+        name: "Python",
+        keywords: [
+          "programming",
+          "backend"
+        ],
+        level: "basic"
+      },
+      {
+        code: "django",
+        name: "Django",
+        keywords: [
+          "programming",
+          "backend",
+          "frontend"
+        ],
+        level: "basic"
+      }
+    ],
+    languages: [
+      {
+        code: "es",
+        lang: "Español",
+        fluency: "C2",
+        level: 100,
+        desc: "Lenguaje nativo"
+      },
+      {
+        code: "en",
+        lang: "Inglés",
+        fluency: "C2",
+        level: 100,
+        desc: "Grado A (94/100) en Inglés como Primer Lenguaje, certificado por la Universidad de Cambridge."
+      },
+      {
+        code: "de",
+        lang: "Alemán",
+        fluency: "A2",
+        level: 33,
+        desc: "Actualmente estudiando en el Goethe-Institut."
+      },
+      {
+        code: "fr",
+        lang: "Francés",
+        fluency: "A1",
+        level: 10,
+        desc: "Nivel de comunicación básica en francés, certificado por la Alliance française."
+      }
+    ]
+  },
+  projects: [
+    {
+      id: 1,
+      name: "Página de doc. técnica",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript"
+      ],
+      url: "https://nicopoore.github.io/technical-documentation/",
+      repo: "https://github.com/nicopoore/technical-documentation"
+    },
+    {
+      id: 2,
+      name: "Landing Page",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "bootstrap"
+      ],
+      url: "https://nicopoore.github.io/landing-page/",
+      repo: "https://github.com/nicopoore/landing-page"
+    },
+    {
+      id: 3,
+      name: "Máquina de frases",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "bootstrap",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/random-quote-machine/",
+      repo: "https://github.com/nicopoore/random-quote-machine"
+    },
+    {
+      id: 4,
+      name: "Visualizador Markdown",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/markdown-previewer/",
+      repo: "https://github.com/nicopoore/markdown-previewer"
+    },
+    {
+      id: 5,
+      name: "App de pads",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/drum-machine/",
+      repo: "https://github.com/nicopoore/drum-machine"
+    },
+    {
+      id: 6,
+      name: "Calculadora",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/react-calculator/",
+      repo: "https://github.com/nicopoore/react-calculator"
+    },
+    {
+      id: 7,
+      name: "Temporizador Pomodoro",
+      tags: [
+        "front-end",
+        "html",
+        "css",
+        "javascript",
+        "react",
+        "redux"
+      ],
+      url: "https://nicopoore.github.io/react-pomodoro/",
+      repo: "https://github.com/nicopoore/react-pomodoro"
+    },
+    {
+      id: 8,
+      name: "Microservicio de tiempo",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://evening-wave-75791.herokuapp.com/",
+      repo: "https://github.com/nicopoore/timestamp-service"
+    },
+    {
+      id: 9,
+      name: "Lector de Request Header",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://pure-brushlands-16955.herokuapp.com/",
+      repo: "https://github.com/nicopoore/request-header-parser"
+    },
+    {
+      id: 10,
+      name: "Acortador de URLs",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express",
+        "mongodb",
+        "mongoose"
+      ],
+      url: "https://mysterious-hamlet-01922.herokuapp.com/",
+      repo: "https://github.com/nicopoore/url-shortener"
+    },
+    {
+      id: 11,
+      name: "Lector de Metadata",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express"
+      ],
+      url: "https://enigmatic-fjord-43448.herokuapp.com/",
+      repo: "https://github.com/nicopoore/file-metadata"
+    },
+    {
+      id: 12,
+      name: "Log de ejercicio",
+      tags: [
+        "back-end",
+        "javascript",
+        "node",
+        "express",
+        "mongodb",
+        "mongoose"
+      ],
+      url: "https://secret-cove-94553.herokuapp.com/",
+      repo: "https://github.com/nicopoore/exercise-tracker"
+    }
+  ]
+}
+
+const defaultState = {
+  lang: 'es',
+  darkMode: false,
+  showSidebarMobile: false,
+  showSidebarMain: false,
+  activeSection: 'about-link',
+  about: [...esContent.about],
+  timelines: {...esContent.timelines},
+  skills: {...esContent.skills},
+  projects: [...esContent.projects],
   projectFilter: []
 }
 
@@ -377,7 +756,11 @@ const rootReducer = (state = defaultState, action) => {
     case 'TOGGLE_LANG':
       return {
         ...state,
-        lang: action.lang
+        lang: action.lang,
+        about: state.lang === 'en' ? [...esContent.about] : [...enContent.about],
+        timelines: state.lang === 'en' ? {...esContent.timelines} : {...enContent.timelines},
+        skills: state.lang === 'en' ? {...esContent.skills} : {...enContent.skills},
+        projects: state.lang === 'en' ? [...esContent.projects] : [...enContent.projects],
       }
     case 'TOGGLE_DARKMODE':
       return {

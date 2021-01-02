@@ -18,7 +18,7 @@ class ProjectItem extends Component {
     return (
         <div className="ProjectItem chivo" id={this.props.key}>
           <div className="piTitleWrap">
-            <p className="piTitle"><a href={this.props.url}>{this.props.name}</a></p>
+            <p className="piTitle"><a href={this.props.repo}>{this.props.name}</a></p>
           </div>
           <div className="piTagsWrap">
             <div className="piTags">

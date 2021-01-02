@@ -34,29 +34,29 @@ class Skills extends Component {
     const langs = this.props.languages.map(item => this.renderLang(item))
     return (
       <div className="Skills main-section" id="skills">
-        <h2 className="playfair subheading" id="skill-sub">Skills</h2>
+        <h2 className="playfair subheading" id="skill-sub">{this.props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
 
         <div className="skill-div chivo" id="techSkills">
-          <h3 className="chivo skills-description">Technical skills</h3>
+          <h3 className="chivo skills-description">{this.props.lang === 'en' ? 'Technical Skills' : 'Conocimientos técnicos'}</h3>
           <ul id="skillList">
 
             <li className="LangItem highFluency">
               <p className="chiv langHead">
-                <span className="langName">Advanced</span>
+                <span className="langName">{this.props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
               </p>
               {advancedSkills}
             </li>
 
             <li className="LangItem midFluency">
               <p className="chiv langHead">
-                <span className="langName">Intermediate</span>
+                <span className="langName">{this.props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
               </p>
               {intermediateSkills}
             </li>
 
             <li className="LangItem lowFluency">
               <p className="chiv langHead">
-                <span className="langName">Basic</span>
+                <span className="langName">{this.props.lang === 'en' ? 'Basic' : 'Básico'}</span>
               </p>
               {basicSkills}
             </li>
@@ -67,7 +67,7 @@ class Skills extends Component {
 
 
         <div className="skill-div" id="languages">
-          <h3 className="chivo skills-description">Languages</h3>
+          <h3 className="chivo skills-description">{this.props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
           <ul id="langList">
             {langs}
           </ul>
@@ -79,6 +79,7 @@ class Skills extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  lang: state.lang,
   technical: state.skills.technical,
   languages: state.skills.languages
 })

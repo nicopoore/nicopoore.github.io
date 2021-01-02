@@ -1,3 +1,5 @@
+import { faEraser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProjectItem from './ProjectItem'
@@ -38,11 +40,10 @@ class Projects extends Component {
     const renderedFilter = this.props.projectFilter.reverse().map(item => this.renderTag(item))
     return (
       <div className="Projects main-section" id="projects">
-        <p className="playfair subheading" id="projectsSub">Projects</p>
-        {/*<div id="appliedFilters" style={this.props.projectFilter.length != 0 ? {marginBottom: -2.1 + "rem"} : {marginBottom: 0}}>*/}
+        <p className="playfair subheading" id="projectsSub">{this.props.lang === 'en' ? 'Projects' : 'Proyectos'}</p>
         <div id="appliedFilters" style={{marginBottom: (this.props.projectFilter.length != 0 ? -2.1 : 0) + "rem"}}>
           {renderedFilter}
-          {this.props.projectFilter.length != 0 && <button onClick={this.resetFilter}>Clear filter</button>}
+          {this.props.projectFilter.length != 0 && <span className="resetFilterButton" onClick={this.resetFilter}><FontAwesomeIcon icon={faEraser} /></span>}
         </div>
         <div style={{marginTop: 2.6 + "rem"}}>
           {renderedProjects}
@@ -53,6 +54,7 @@ class Projects extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  lang: state.lang,
   projects: state.projects,
   projectFilter: state.projectFilter
 })
