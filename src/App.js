@@ -1,8 +1,7 @@
 import './App.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects } from './components'
-import AppChild from './components/AppChild'
+import FullResume from './components/FullResume'
 
 const enContent = {
   about: [
@@ -748,7 +747,14 @@ const defaultState = {
   timelines: {...esContent.timelines},
   skills: {...esContent.skills},
   projects: [...esContent.projects],
-  projectFilter: []
+  projectFilter: [],
+  contact: {
+    location: 'Vicente López, Buenos Aires',
+    phone: '15-5526-4650',
+    email: 'nicolaspoore@gmail.com',
+    github: 'https://github.com/nicopoore',
+    linkedin: 'https://www.linkedin.com/in/nicolas-poore/'
+  }
 }
 
 const rootReducer = (state = defaultState, action) => {
@@ -804,7 +810,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="AppWrap">
-        <AppChild />
+        <FullResume />
       </div>
     </Provider>
   );

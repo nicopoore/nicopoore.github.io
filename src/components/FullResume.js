@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects } from './'
+import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects, Contact } from '.'
 
 class AppChild extends Component {
 
@@ -21,6 +21,7 @@ class AppChild extends Component {
             <Divider type="two" />
             <Projects />
             <Divider type="one" />
+            <Contact />
           </div>
         </div>
     )

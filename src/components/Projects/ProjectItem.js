@@ -7,6 +7,7 @@ class ProjectItem extends Component {
   renderTag = (tag) => {
     return (
       <ProjectTag 
+        key={tag}
         tag={tag}
         type='add'
       />
@@ -29,8 +30,5 @@ class ProjectItem extends Component {
     )
   }
 }
-
-const mapStateToProps = (state) => ({
-})
 
 export default connect(null)(ProjectItem)

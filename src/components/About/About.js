@@ -23,41 +23,47 @@ class About extends Component {
     const scrolled = winScroll / height
 
 
-    if (scrolled <= .2) {
+    if (scrolled <= .166) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: false,
         activeSection: 'about-link'
       })
-    } else if (scrolled >= .2 && scrolled < .4) {
+    } else if (scrolled >= .166 && scrolled < .333) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'work-link'
       })
-    } else if (scrolled >= .4 && scrolled < .6) {
+    } else if (scrolled >= .333 && scrolled < .5) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'education-link'
       })
-    } else if (scrolled >= .6 && scrolled < .8) {
+    } else if (scrolled >= .5 && scrolled < .666) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'skills-link'
       })
-    } else if (scrolled >= .8 && scrolled < 1) {
+    } else if (scrolled >= .666 && scrolled < .833) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'projects-link'
       })
+    } else if (scrolled >= .833 && scrolled < 1) {
+      this.props.dispatch({
+        type: 'TOGGLE_SECTION',
+        showSidebarMain: true,
+        activeSection: 'contact-link'
+      })
     }
   }
 
   toggleDarkMode = () => {
-    document.documentElement.style.setProperty('--root-backg', this.props.darkMode ? 'white' : '#101010')
+    document.documentElement.style.setProperty('--root-bg', this.props.darkMode ? 'white' : '#101010')
     this.props.dispatch({
       type: 'TOGGLE_DARKMODE',
       darkMode: !this.props.darkMode
