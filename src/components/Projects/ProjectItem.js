@@ -16,10 +16,11 @@ class ProjectItem extends Component {
 
   render() {
     const renderedTags = this.props.tags.map(tag => this.renderTag(tag))
+    console.log(this.props.key)
     return (
         <div className="ProjectItem chivo" id={this.props.key}>
           <div className="piTitleWrap">
-            <p className="piTitle"><a href={this.props.repo}>{this.props.name}</a></p>
+            <p className="piTitle"><a href={this.props.repo}>{this.props.key} {this.props.name}</a></p>
           </div>
           <div className="piTagsWrap">
             <div className="piTags">

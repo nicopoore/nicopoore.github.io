@@ -16,7 +16,7 @@ class Contact extends Component {
               <input className="formItem chivo" type="text" placeholder={lang === 'en' ? 'NAME' : 'NOMBRE'} value={this.props.value} required />
               <input className="formItem chivo" type="email" placeholder="EMAIL" required />
               <textarea className="formItem chivo" placeholder={lang === 'en' ? 'MESSAGE' : 'MENSAJE'} required />
-              <button className="formItem chivo" type="submit" id="submitForm">SUBMIT</button>
+              <button className="formItem chivo" type="submit" id="submitForm">{lang === 'en' ? 'SUBMIT' : 'ENVIAR'}</button>
             </form>
           </div>
           <div id="contactInfo">
@@ -30,8 +30,8 @@ class Contact extends Component {
             <div id="infoLinksWrapper">
               <div id="infoLinks">
                 <ul>
-                  <li><a href={this.props.contact.github} target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
-                  <li><a href={this.props.contact.linkedin}><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
+                  <li><a href={this.props.contact.github} target="_blank"><button><FontAwesomeIcon icon={faGithub} /></button></a></li>
+                  <li><a href={this.props.contact.linkedin} target="_blank"><button><FontAwesomeIcon icon={faLinkedinIn} /></button></a></li>
                 </ul>
               </div>
             </div>

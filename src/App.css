@@ -28,18 +28,25 @@
   
   --sidebar-blue: #a1b6c7;
   --active-selection: #fafafa;
-  --lang-button: #486B88;
-  --lang-button-hover: #294E6D;
+  --lang-button-hover: #6D8AA2;
+  --lang-button-active: #486B88;
+  --lang-border: #486B88;
 
-  --adv-blue: #D28868;
-  --int-blue: #FDC1A7;
-  --bsc-blue: #FFEDE6;
+  --adv-orange: #D28868;
+  --int-orange: #FDC1A7;
+  --bsc-orange: #FFEDE6;
   --timeline-item: #FDC1A7;
   --achromatic-grey: #777;
 
   --pi-tag: rgba(200, 220, 240, .3);
   --pi-tag-em: #D28868;
   --project-shadow: #aaa;
+
+  --submit-orange: #FFEDE6;
+  --submit-orange-hover: #FDC1A7;
+  --info-links-hover: #eee;
+
+  --ext-icon: #444;
 }
 
 .darkMode {
@@ -52,18 +59,25 @@
 
   --sidebar-blue: #283a49;
   --active-selection: #999;
-  --lang-button: #fafafa;
-  --lang-button-hover: #dadada;
+  --lang-button-hover: #294E6D;
+  --lang-button-active: #fafafa;
+  --lang-border: #fafafa;
 
-  --adv-blue: #D28868;
-  --int-blue: #FDC1A7;
-  --bsc-blue: #FFEDE6;
+  --adv-orange: #D28868;
+  --int-orange: #FDC1A7;
+  --bsc-orange: #FFEDE6;
   --timeline-item: #D28868;
   --achromatic-grey: #aaa;
 
   --pi-tag: #555;
   --pi-tag-em: #7B3213;
   --project-shadow: rgba(0,0,0,0);
+
+  --submit-orange: #D28868;
+  --submit-orange-hover: #7B3213;
+  --info-links-hover: #ddd;
+
+  --ext-icon: #fafafa;
 }
 
 * {
@@ -210,7 +224,7 @@
 }
 
 .sidebarItem a:hover, .sidebarItem a:hover * {
-  color: white;
+  color: #fafafa;
   transition: color .3s;
 }
 
@@ -222,7 +236,7 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  background: white;
+  background: #fafafa;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -243,32 +257,44 @@
 }
 
 .extIcon * {
-  color: #444;
+  color: var(--ext-icon);
 }
 
-.langChangeSpan {
+/* Language Toggle */
+
+.langToggle {
   display: inline-block;
   margin-top: 5rem;
-  padding: .4rem;
-  border-radius: .2rem;
+}
 
-  background-color: var(--lang-button);
+.langToggle span {
+  font-size: .9rem;
+  padding: .4rem .5rem;
+  border: 1px solid var(--lang-border);
+  user-select: none;
+  transition: background-color .3s, border .3s, color .3s;
+}
+
+.langToggle span:first-of-type {
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem;
+  border-right: none;
+}
+
+.langToggle span:last-of-type {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
+}
+
+.activeLang {
   color: var(--text-inverse);
-  
-  transition: background-color .2s, color .2s
+  background-color: var(--lang-button-active);
+  cursor: unset;
 }
 
-.langChangeSpan * {
-  color: var(--text-inverse)
-}
-
-.langChangeSpan:hover {
-  cursor: pointer;
+.inactiveLang:hover {
   background-color: var(--lang-button-hover);
-}
-
-.langChangeSpan:active {
-  margin-top: 5.1rem;
+  cursor: pointer;
 }
 
 .langChangeName {
@@ -477,15 +503,15 @@
 }
 
 .highFluency {
-  border-left: var(--adv-blue) 2px solid;
+  border-left: var(--adv-orange) 2px solid;
 }
 
 .midFluency {
-  border-left: var(--int-blue) 2px solid;
+  border-left: var(--int-orange) 2px solid;
 }
 
 .lowFluency {
-  border-left: var(--bsc-blue) 2px solid;
+  border-left: var(--bsc-orange) 2px solid;
 }
 
 /* #endregion */
@@ -497,8 +523,16 @@
   min-height: 100vh;
 }
 
-#projectsSub {
-  padding: 1rem 2rem 0.5rem 2rem;
+#projects-sub {
+  padding: 4rem 2rem 0.5rem 11.5rem;
+}
+
+#projectsWrapper {
+  display: block;
+  margin: auto;
+  width: 72%;
+  margin-top: 2.5rem;
+  padding-bottom: 4rem;
 }
 
 .ProjectItem {
@@ -506,7 +540,7 @@
   width: 14rem;
   min-height: 15rem;
   vertical-align: top;
-  margin: 1rem 0 1rem 2.2rem;
+  margin: 1rem 0 1rem 2rem;
   background-color: var(--text-inverse);
   box-shadow: 0 0 .1rem var(--project-shadow);
 }
@@ -591,7 +625,7 @@
 }
 
 #appliedFilters {
-  margin-left: 2.2rem;
+  margin-left: 11.5rem;
   margin-bottom: -2.6rem;
 }
 
@@ -636,25 +670,23 @@
   margin: auto;
   margin-bottom: .5rem;
   height: 2rem;
-  /*
-  border-radius: .3rem;
-  border: 1px solid var(--project-shadow);
-  */
-  border: 0px solid var(--project-shadow);
+  border: 0 solid var(--project-shadow);
   padding-left: .3rem;
 }
 
 #submitForm {
-  background-color: var(--bsc-blue);
+  background-color: var(--submit-orange);
   transition: background-color .3s;
+  padding-left: 0;
 }
 
 #submitForm:hover {
   cursor: pointer;
-  background-color: var(--int-blue);
+  background-color: var(--submit-orange-hover);
 }
 
 #contactForm textarea {
+  padding-top: .3rem;
   min-height: 8rem;
   resize: none;
 }
@@ -679,6 +711,10 @@
   margin: auto;
 }
 
+#infoItems ul li {
+  margin-bottom: 1.5rem;
+}
+
 .infoItemsIcon {
   font-size: 1.5rem;
   margin-right: 2rem;
@@ -688,21 +724,21 @@
   color: var(--main-text);
 }
 
-#infoItems ul li {
-  margin-bottom: 1.5rem;
-}
-
 #infoLinksWrapper {
   width: 90%;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid #fafafa;
+  border-bottom: 2px solid #fafafa;
   margin: auto;
 }
 
 #infoLinks {
-  font-size: 2.5rem;
-  width: 52.5%;
+  display: block;
   margin: auto;
+  text-align: center;
+}
+
+#infoLinks * {
+  color: #202020
 }
 
 #infoLinks ul {
@@ -710,24 +746,26 @@
 }
 
 #infoLinks ul li {
-  line-height: 4rem;
   display: inline-block;
-  background-color: white;
+  margin-right: 1rem;
+}
+
+#infoLinks ul button {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  background-color: #fafafa;
   width: 4rem;
   height: 4rem;
   border-radius: 4rem;
   text-align: center;
-  margin-right: 1rem;
+  transition: background-color .2s;
+  border: none;
 }
 
-#infoLinks * {
-  color: var(--main-text)
-}
-
-#infoLinks ul li a {
-  width: 4rem;
-  height: 4rem;
-  color: white;
+#infoLinks ul li:hover a * {
+  transition: background-color .2s;
+  background-color: var(--info-links-hover);
+  cursor: pointer;
 }
 
 
@@ -770,6 +808,10 @@
 
   .sm-shown {
     display: block;
+  }
+
+  .main-section {
+    padding-bottom: 2rem;
   }
 
   /* #endregion */
@@ -843,7 +885,7 @@
   /* #region Experience */
 
   .Experience {
-    padding-top: 10vh;
+    padding-top: 8%;
   }
   
   .timelineItemSubtitle {
@@ -875,14 +917,83 @@
     margin-bottom: 3rem;
   }
 
-  .skill-div {
-    display: block;
-    width: 50%;
-    margin: 3rem auto;
+  #skill-sub {
+    padding: 3rem .5rem 0;
   }
 
-  #skill-sub {
-    padding: 3rem 5rem 0;
+  .skill-div {
+    display: block;
+    width: 75%;
+    margin: 2rem 3rem;
+  }
+
+  .divider-one {
+    margin-top: 0;
+  }
+
+  /* #endregion */
+
+  /* #region Projects */
+
+  .ProjectItem {
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    min-height: 13rem;
+  }
+
+  #projects-sub {
+    padding-left: 22.5%;
+  }
+  
+  #projectsWrapper {
+    margin-top: 3.2rem;
+    padding-bottom: 0;
+  }
+
+  #appliedFilters {
+    margin-left: 22.5%;
+  }
+
+  /* #endregion */
+
+  /* #region Contact */
+
+  .Contact {
+    max-width: 100%;
+    height: initial;
+    min-height: initial;
+  }
+
+  #contact-sub {
+    padding: 3rem 0 1rem 2rem;
+  }
+
+  #contactContentWrapper {
+    width: 90%;
+  }
+
+  #contactForm {
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  #contactInfo {
+    width: 100%
+  }
+
+  .formItem {
+    height: 2.5rem;
+  }
+
+  #infoLinks {
+    display: block;
+    margin: auto;
+  }
+
+  .infoItemsIcon {
+    margin-right: 1rem;
   }
 
   /* #endregion */
@@ -899,9 +1010,90 @@
     margin: 0;
     padding: 0;
   }
-  
+
+  .sm-hidden {
+    display: none;
+  }
+
+  .sm-shown {
+    display: block;
+  }
+
   .Sidebar {
     display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: grid;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    opacity: 0;
+    transition: left .6s, opacity .4s;
+  }
+
+  #sidebarActive {
+    height: 100vh;
+    z-index: 1;
+    left: 0;
+    opacity: 1;
+    transition: left .6s, opacity .4s;
+  }
+
+  .sidebarList {
+    margin: auto;
+    margin-top: 13rem;
+  }
+
+  .sidebarItem {
+    margin: 3rem;
+  }
+
+  .sidebarMain {
+    display: none;
+  }
+
+  .langToggle {
+    margin: 0;
+  }
+
+  #projects-sub {
+    padding: 2rem 1rem .5rem;
+  }
+
+  #appliedFilters {
+    margin: 0 1rem;
+  }
+
+  #projectsWrapper {
+    width: 100%;
+  }
+
+  .ProjectItem {
+    margin: 1rem;
+  }
+
+  .Contact {
+    min-height: initial;
+    padding-bottom: 3rem;
+  }
+
+  #contact-sub {
+    padding: 2rem 3.5rem;
+  }
+
+  #contactContentWrapper {
+    width: 90%;
+  }
+
+  #contactForm {
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  #contactInfo {
+    width: 100%
   }
 }
 

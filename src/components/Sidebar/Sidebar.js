@@ -13,12 +13,22 @@ class Sidebar extends Component {
     })
   }
 
-  changeLang = () => {
-    const newLang = this.props.lang === 'en' ? 'es' : 'en'
-    this.props.dispatch({
-      type: 'TOGGLE_LANG',
-      lang: newLang
-    })
+  langEng = () => {
+    if(this.props.lang === 'es') {
+      this.props.dispatch({
+        type: 'TOGGLE_LANG',
+        lang: 'en'
+      })
+    }
+  }
+
+  langSpa = () => {
+    if(this.props.lang === 'en') {
+      this.props.dispatch({
+        type: 'TOGGLE_LANG',
+        lang: 'es'
+      })
+    }
   }
 
   render() {
@@ -64,13 +74,19 @@ class Sidebar extends Component {
               </a>
             </li>
             <li className="sidebarItem chivo">
-              <a href="#resume" className={this.props.activeSection === 'resume-link' ? 'activeSection' : undefined} id="resume-link" onClick={this.handleClick}>
-                {this.props.lang === 'en' ? 'Resume' : 'CV'} <FontAwesomeIcon icon={faExternalLinkAlt} className="extIcon" />
+              <a href="https://pdfhost.io/v/eOzrBNHO~_CV_Nicolas_Poorepdf.pdf" target="_blank" className={this.props.activeSection === 'resume-link' ? 'activeSection' : undefined} id="resume-link" onClick={this.handleClick}>
+                {this.props.lang === 'en' ? 'Resume (En)' : 'CV (Es)'} <FontAwesomeIcon icon={faExternalLinkAlt} className="extIcon" />
               </a>
             </li>
           </ul>
         </nav>
-        <span className="langChangeSpan chivo" onClick={this.changeLang}><FontAwesomeIcon icon={faGlobeAmericas} /><span className="langChangeName"> {this.props.lang === 'en' ? 'English' : 'Español'}</span></span>
+        {/*<span className="langChangeSpan chivo" onClick={this.changeLang}>
+          <FontAwesomeIcon icon={faGlobeAmericas} /><span className="langChangeName"> {this.props.lang === 'en' ? 'English' : 'Español'}</span>
+        </span>*/}
+        <div className="langToggle chivo">
+          <span className={this.props.lang === 'en' ? 'activeLang' : 'inactiveLang'} onClick={this.langEng}>English</span>
+          <span className={this.props.lang === 'en' ? 'inactiveLang' : 'activeLang'} onClick={this.langSpa}>Español</span>
+        </div>
       </div>
     )
   }
