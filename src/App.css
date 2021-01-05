@@ -865,7 +865,7 @@
   }
 
   .Sidebar nav ul {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 
   .Sidebar nav ul li {
@@ -877,7 +877,7 @@
   }
 
   #langToggle {
-    margin: 0;
+    margin-top: -3rem;
   }
 
   /* #endregion */
