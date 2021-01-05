@@ -303,6 +303,17 @@
   cursor: pointer;
 }
 
+#copyright {
+  font-size: .8rem;
+  position: absolute;
+  width: 100%;
+  bottom: 1rem
+}
+
+#copyright p {
+  margin: .3rem;
+}
+
 /* #endregion */
 
 /* #region About */

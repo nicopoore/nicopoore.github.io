@@ -5,9 +5,9 @@ import FullResume from './components/FullResume'
 
 const enContent = {
   about: [
-    'Currently working with multinational Kaeser Kompressoren in the Engineering department. At the moment studying Advanced JavaScript Development (including frameworks with a MERN stack focus).',
-    'Experienced in Web Development, 3D design, Adobe Creative Suite. Strong design and management professional with a Full Stack Web Development Certification focused in Computer Software Engineering from FCC.',
-    'On my free time I love watching movies (you can find me on Letterboxd!), playing the piano (and sucking at the guitar), programming, and learning.'
+    "I'm a full stack developer, currently deepening my knowledge of Advanced JavaScript Development, particularly frameworks with a MERN stack focus, after having finished two degrees in Javascript web development.",
+    "Constantly focusing on design, I'm experienced in Web Development, 3D modelling, Adobe Creative Suite, with a strong passion for programming and innovation. I have Full Stack Web Development Certifications from FCC and EducacionIT.",
+    "In my free time I love watching movies (you can find me on Letterboxd!), playing the piano (plus sucking at the guitar), programming, and learning."
   ],
   timelines: {
     experienceArray: [
@@ -372,9 +372,9 @@ const enContent = {
 
 const esContent = {
   about: [
-    'Estudiante de Ingeniería en Sistemas en la Universidad de Buenos Aires, trabajando hace cerca de 3 años en el área de Ingenieria de la multinacional Kaeser Compresores como CADista de proyectos. Actualmente cursando Desarrollo Avanzado con JavaScript (incluyendo frameworks con un enfoque en stack MERN).',
-    'Cuento con tendencia al diseño y experiencia en la industria. Calificado en Solid Edge, AutoCAD, Desarrollo Web, Adobe Creative Suit. Certificado de desarrollo web básico Full Stack de FCC.',
-    'En mi tiempo libre me encanta ver peliculas (estoy en Letterboxd!), tocar el piano (o intentando tocar la guitarra), programar y aprender'
+    "Soy desarrollador full-stack, actualmente profundizando mis conocimientos de Desarrollo Avanzado Javascript, especialmente focalizado a frameworks de stack MERN, después de haber terminado dos carreras de desarrollo en Javascript junto con diversos proyectos.",
+    "Me caracterizo por una tendencia al diseño -calificado en modelado 3D, desarrollo web y Adobe Creative Suit- y el desarrollo de herramientas para solucionar problemas. Cuento con certificados de desarrollo web Full Stack de FCC y EducacionIT.",
+    "En mi tiempo libre me encanta ver peliculas (estoy en Letterboxd!), tocar el piano (o fallar intentando tocar la guitarra), programar y aprender."
   ],
   timelines: {
     experienceArray: [

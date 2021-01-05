@@ -84,6 +84,10 @@ class Sidebar extends Component {
           <span className={this.props.lang === 'en' ? 'activeLang' : 'inactiveLang'} onClick={this.langEng}>English</span>
           <span className={this.props.lang === 'en' ? 'inactiveLang' : 'activeLang'} onClick={this.langSpa}>Español</span>
         </div>
+        <div className="chivo" id="copyright">
+          <p>{this.props.lang === 'en' ? 'Created by' : 'Creado por'} Nicolás Cedric Poore</p>
+          <p>{this.props.lang === 'en' ? 'All rights reserved' : 'Todos los derechos reservados'} &#169; 2021</p>
+        </div>
       </div>
     )
   }
