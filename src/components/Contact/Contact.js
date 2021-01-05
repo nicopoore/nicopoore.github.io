@@ -3,6 +3,7 @@ import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import emailjs from 'emailjs-com';
 
 class Contact extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
-      submit: ''
+      status: ''
     }
     this.onNameChange = this.onNameChange.bind(this)
     this.onEmailChange = this.onEmailChange.bind(this)
@@ -32,20 +33,49 @@ class Contact extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+
+    this.setState({status: 'processing'})
+
+    emailjs.sendForm('service_63wa0hd', 'template_o4cv7pz', e.target, 'user_fILpx29tAK6zs1Xdr1LUm')
+      .then((res) => {
+        this.setState({
+          name: '',
+          email: '',
+          message: '',
+          status: 'sent'
+        })
+        console.log(res.text)
+      }, (err) => {
+        console.log(err.text)
+      })
+      .then(() => {
+        setTimeout(() => {
+          this.setState({status: ''})
+        }, 3000);
+      })
   }
 
   render() {
     const lang = this.props.lang
+    const submit_text = () => {
+      if (this.state.status === '') {
+        return lang === 'en' ? 'SUBMIT' : 'ENVIAR'
+      } else if (this.state.status === 'processing') {
+        return lang === 'en' ? 'SENDING...' : 'ENVIANDO...'
+      } else if (this.state.status === 'sent') {
+        return lang === 'en' ? 'SENT!' : 'ENVIADO!'
+      }
+    }
     return (
       <section className="Contact" id="contact">
         <h2 className="subheading">{this.props.lang === 'en' ? 'Contact' : 'Contacto'}</h2>
         <div>
           <div id="contactForm">
             <form onSubmit={this.handleSubmit}>
-              <input type="text" value={this.state.name} onChange={this.onNameChange} placeholder={lang === 'en' ? 'NAME' : 'NOMBRE'} required />
-              <input type="email" value={this.state.email} onChange={this.onEmailChange} placeholder="EMAIL" required />
-              <textarea value={this.state.message} onChange={this.onMessageChange} placeholder={lang === 'en' ? 'MESSAGE' : 'MENSAJE'} required />
-              <button type="submit">{lang === 'en' ? 'SUBMIT' : 'ENVIAR'}</button>
+              <input type="text" value={this.state.name} onChange={this.onNameChange} placeholder={lang === 'en' ? 'NAME' : 'NOMBRE'} required name="name" />
+              <input type="email" value={this.state.email} onChange={this.onEmailChange} placeholder="EMAIL" required name="email" />
+              <textarea value={this.state.message} onChange={this.onMessageChange} placeholder={lang === 'en' ? 'MESSAGE' : 'MENSAJE'} required name="message" />
+              <input type="submit" value={submit_text()} />
             </form>
           </div>
           <div id="contactInfo">

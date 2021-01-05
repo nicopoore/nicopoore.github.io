@@ -684,13 +684,13 @@
   resize: none;
 }
 
-#contactForm button {
+#contactForm input:last-of-type {
   background-color: var(--submit-orange);
   transition: background-color .3s;
   padding-left: 0;
 }
 
-#contactForm button:hover {
+#contactForm input:last-of-type:hover {
   cursor: pointer;
   background-color: var(--submit-orange-hover);
 }
