@@ -15,9 +15,9 @@ class LangItem extends Component {
 
   render() {
     return (
-      <li className={`LangItem ${this.fluencyColor(this.props.level)}`}>
-        <p className="chiv langHead">
-          <span className="langName">{this.props.name}</span> - <span className="langFluency">{this.props.fluency}</span>
+      <li className={`${this.fluencyColor(this.props.level)}`}>
+        <p>
+          <span>{this.props.name}</span> - <span>{this.props.fluency}</span>
         </p>
         <p className="chivo langDesc">{this.props.desc}</p>
       </li>

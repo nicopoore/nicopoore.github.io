@@ -39,16 +39,16 @@ class Projects extends Component {
     const renderedProjects = this.props.projects.filter(project => filterArray.every(val => project.tags.indexOf(val) !== -1) && project.id !== 1 && project.id !== 9 && project.id !== 11).reverse().map((item) => this.renderProjects(item))
     const renderedFilter = this.props.projectFilter.reverse().map(item => this.renderTag(item))
     return (
-      <div className="Projects main-section" id="projects">
-        <p className="playfair subheading" id="projects-sub">{this.props.lang === 'en' ? 'Projects' : 'Proyectos'}</p>
+      <section className="Projects" id="projects">
+        <h2 className="subheading">{this.props.lang === 'en' ? 'Projects' : 'Proyectos'}</h2>
         <div id="appliedFilters" style={{marginBottom: (this.props.projectFilter.length !== 0 ? -2.1 : 0) + "rem"}}>
           {renderedFilter}
           {this.props.projectFilter.length !== 0 && <span className="resetFilterButton" onClick={this.resetFilter}><FontAwesomeIcon icon={faEraser} /></span>}
         </div>
-        <div id="projectsWrapper">
+        <div className="chivo" id="projectsWrapper">
           {renderedProjects}
         </div>
-      </div>
+      </section>
     )
   }
 }

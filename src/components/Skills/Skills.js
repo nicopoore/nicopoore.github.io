@@ -33,30 +33,30 @@ class Skills extends Component {
     const basicSkills = this.props.technical.filter(skill => skill.level === "basic").map(item => this.renderSkill(item))
     const langs = this.props.languages.map(item => this.renderLang(item))
     return (
-      <div className="Skills main-section" id="skills">
-        <h2 className="playfair subheading" id="skill-sub">{this.props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
+      <section className="Skills" id="skills">
+        <h2 className="subheading">{this.props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
 
-        <div className="skill-div chivo" id="techSkills">
-          <h3 className="chivo skills-description">{this.props.lang === 'en' ? 'Technical Skills' : 'Conocimientos técnicos'}</h3>
-          <ul id="skillList">
+        <div>
+          <h3>{this.props.lang === 'en' ? 'Technical Skills' : 'Conocimientos técnicos'}</h3>
+          <ul>
 
-            <li className="LangItem highFluency">
-              <p className="chiv langHead">
-                <span className="langName">{this.props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
+            <li className="highFluency">
+              <p>
+                <span>{this.props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
               </p>
               {advancedSkills}
             </li>
 
-            <li className="LangItem midFluency">
-              <p className="chiv langHead">
-                <span className="langName">{this.props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
+            <li className="midFluency">
+              <p>
+                <span>{this.props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
               </p>
               {intermediateSkills}
             </li>
 
-            <li className="LangItem lowFluency">
-              <p className="chiv langHead">
-                <span className="langName">{this.props.lang === 'en' ? 'Basic' : 'Básico'}</span>
+            <li className="lowFluency">
+              <p>
+                <span>{this.props.lang === 'en' ? 'Basic' : 'Básico'}</span>
               </p>
               {basicSkills}
             </li>
@@ -66,14 +66,14 @@ class Skills extends Component {
 
 
 
-        <div className="skill-div" id="languages">
-          <h3 className="chivo skills-description">{this.props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
-          <ul id="langList">
+        <div>
+          <h3>{this.props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
+          <ul>
             {langs}
           </ul>
         </div>
 
-      </div>
+      </section>
     )
   }
 }

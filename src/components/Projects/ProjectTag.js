@@ -18,7 +18,6 @@ class ProjectItem extends Component {
     const updatedFilter = [...this.props.projectFilter]
     const index = updatedFilter.indexOf(this.props.tag)
     updatedFilter.splice(index, 1)
-    console.log(updatedFilter)
     this.props.dispatch({
       type: 'REMOVE_FILTER',
       projectFilter: updatedFilter
@@ -28,8 +27,8 @@ class ProjectItem extends Component {
   render() {
     const type = this.props.type
     return (
-      <button onClick={this.addToFilter} className={`chivo piTag ${this.props.tag} ${type === 'remove' ? 'addedTag' : 'nonAddedTag'}`}>
-        {type === 'add' && <span className="piTagTextIcon"><FontAwesomeIcon icon={faFilter} /></span>} <span className={`piTagText`}>{this.props.tag}</span>
+      <button onClick={this.addToFilter} className={`chivo piTag ${this.props.tag} ${type === 'remove' ? 'addedTag' : ''}`}>
+        {type === 'add' && <span className="filter-icon"><FontAwesomeIcon icon={faFilter} /></span>} <span className="piTagText">{this.props.tag}</span>
         {type === 'remove' && <span className="x-icon" onClick={this.removeFromFilter}><FontAwesomeIcon icon={faTimes} /></span>}
       </button>
     )

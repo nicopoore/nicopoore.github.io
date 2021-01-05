@@ -20,12 +20,12 @@ class Experience extends Component {
   render() {
     const rendered = this.props.experienceArray.reverse().map(item => this.renderExperiences(item))
     return (
-      <div className="Experience main-section" id="work">
-        <h2 className="playfair subheading" id="experienceTitle">{this.props.lang === 'en' ? 'Work Experience' : 'Experiencia laboral'}</h2>
+      <section className="Experience" id="work">
+        <h2 className="subheading">{this.props.lang === 'en' ? 'Work Experience' : 'Experiencia laboral'}</h2>
         <ul>
           {rendered}
         </ul>
-      </div>
+      </section>
     )
   }
 }

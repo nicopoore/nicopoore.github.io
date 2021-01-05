@@ -10,7 +10,7 @@ class AppChild extends Component {
         <div className={`App ${darkModeClass}`}>
           <Hamburger />
           <Sidebar />
-          <div className="Main">
+          <div id="Main">
             <About />
             <Divider type="one" />
             <Experience />

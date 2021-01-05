@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 const Divider = (props) => {
   return (
-    <div className={`divider-${props.type}`}>
+    <div className={props.type}>
     </div>
   )
 }

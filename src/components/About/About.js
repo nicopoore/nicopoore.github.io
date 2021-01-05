@@ -22,7 +22,6 @@ class About extends Component {
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
     const scrolled = winScroll / height
 
-
     if (scrolled <= .166) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
@@ -72,18 +71,18 @@ class About extends Component {
 
   render() {
     return (
-      <div className="About main-section" id="about">
-        <button className="toggleDarkButton" onClick={this.toggleDarkMode}><FontAwesomeIcon icon={this.props.darkMode ? faSun : faMoon} /></button>
-        <img src="profile.jpg" className="round no-select" id="aboutPic" alt="Nicolas Poore" />
-        <h1 className="playfair no-select" id="mainTitle">Nicolás <span className="cedric">Cedric</span> Poore</h1>
-        <h2 className="chivo no-select sm-hidden lg-shown" id="mainSubtitle">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'} &nbsp;|&nbsp; Buenos Aires, Argentina</h2>
-        <h2 className="chivo no-select sm-shown lg-hidden" id="mainSubtitle">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'}<br/>Buenos Aires, Argentina</h2>
+      <section className="About" id="about">
+        <button id="toggleDarkButton" onClick={this.toggleDarkMode}><FontAwesomeIcon icon={this.props.darkMode ? faSun : faMoon} /></button>
+        <img src="profile.jpg" alt="Nicolas Poore" />
+        <h1 className="playfair no-select">Nicolás <span>Cedric</span> Poore</h1>
+        <h2 className="chivo no-select sm-hidden lg-shown">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'} &nbsp;|&nbsp; Buenos Aires, Argentina</h2>
+        <h2 className="chivo no-select sm-shown lg-hidden">{this.props.lang === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'}<br/>Buenos Aires, Argentina</h2>
 
-        <p className="aboutParagraph chivo">{this.props.about[0]}</p>
-        <p className="aboutParagraph chivo">{this.props.about[1]}</p>
-        <p className="aboutParagraph chivo">{this.props.about[2]}</p>
+        <p>{this.props.about[0]}</p>
+        <p>{this.props.about[1]}</p>
+        <p>{this.props.about[2]}</p>
         
-      </div>
+      </section>
     )
   }
 }
