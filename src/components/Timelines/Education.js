@@ -17,8 +17,8 @@ class Education extends Component {
     )
   }
 
-  renderedFormal = () => this.props.formalEdArray.reverse().map(item => this.renderEducation(item))
-  renderedPersonal = () => this.props.personalEdArray.reverse().map(item => this.renderEducation(item))
+  renderedFormal = () => this.props.formalEdArray.slice().reverse().map(item => this.renderEducation(item))
+  renderedPersonal = () => this.props.personalEdArray.slice().reverse().map(item => this.renderEducation(item))
 
   render() {
     return (

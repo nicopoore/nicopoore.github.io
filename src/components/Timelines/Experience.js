@@ -17,7 +17,7 @@ class Experience extends Component {
     )
   }
 
-  rendered = () => this.props.experienceArray.reverse().map(item => this.renderExperiences(item))
+  rendered = () => this.props.experienceArray.slice().reverse().map(item => this.renderExperiences(item))
 
   render() {
     return (
