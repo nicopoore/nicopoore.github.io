@@ -17,19 +17,20 @@ class Education extends Component {
     )
   }
 
+  renderedFormal = () => this.props.formalEdArray.reverse().map(item => this.renderEducation(item))
+  renderedPersonal = () => this.props.personalEdArray.reverse().map(item => this.renderEducation(item))
+
   render() {
-    const renderedFormal = this.props.formalEdArray.reverse().map(item => this.renderEducation(item))
-    const renderedPersonal = this.props.personalEdArray.reverse().map(item => this.renderEducation(item))
     return (
       <section className="Education" id="education">
         <h2 className="subheading">{this.props.lang === 'en' ? 'Formal Education' : 'Educación formal'}</h2>
-        <ul>
-          {renderedFormal}
-        </ul>
+        <ol>
+          {this.renderedFormal()}
+        </ol>
         <h2 className="subheading">{this.props.lang === 'en' ? 'Personal Education' : 'Educación personal'}</h2>
-        <ul>
-          {renderedPersonal}
-        </ul>
+        <ol>
+          {this.renderedPersonal()}
+        </ol>
       </section>
     )
   }

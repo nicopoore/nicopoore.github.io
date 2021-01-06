@@ -17,14 +17,15 @@ class Experience extends Component {
     )
   }
 
+  rendered = () => this.props.experienceArray.reverse().map(item => this.renderExperiences(item))
+
   render() {
-    const rendered = this.props.experienceArray.reverse().map(item => this.renderExperiences(item))
     return (
       <section className="Experience" id="work">
         <h2 className="subheading">{this.props.lang === 'en' ? 'Work Experience' : 'Experiencia laboral'}</h2>
-        <ul>
-          {rendered}
-        </ul>
+        <ol>
+          {this.rendered()}
+        </ol>
       </section>
     )
   }
@@ -34,7 +35,6 @@ class Experience extends Component {
 
 const mapStateToProps = (state) => ({
   lang: state.lang,
-  showSidebarMain: state.showSidebarMain,
   experienceArray: state.timelines.experienceArray
 })
 

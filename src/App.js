@@ -373,7 +373,7 @@ const enContent = {
 const esContent = {
   about: [
     "Soy desarrollador full-stack, actualmente profundizando mis conocimientos de Desarrollo Avanzado Javascript, especialmente focalizado a frameworks de stack MERN, después de haber terminado dos carreras de desarrollo en Javascript junto con diversos proyectos.",
-    "Me caracterizo por una tendencia al diseño -calificado en modelado 3D, desarrollo web y Adobe Creative Suit- y el desarrollo de herramientas para solucionar problemas. Cuento con certificados de desarrollo web Full Stack de FCC y EducacionIT.",
+    "Me caracterizo por una tendencia al diseño -calificado en modelado 3D, desarrollo web y Adobe Creative Suite- y el desarrollo de herramientas para solucionar problemas. Cuento con certificados de desarrollo web Full Stack de FCC y EducacionIT.",
     "En mi tiempo libre me encanta ver peliculas (estoy en Letterboxd!), tocar el piano (o fallar intentando tocar la guitarra), programar y aprender."
   ],
   timelines: {
