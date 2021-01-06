@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/nicopoore.github.io/static/css/main.ce183463.chunk.css",
-    "main.js": "/nicopoore.github.io/static/js/main.7888b2aa.chunk.js",
-    "main.js.map": "/nicopoore.github.io/static/js/main.7888b2aa.chunk.js.map",
-    "runtime-main.js": "/nicopoore.github.io/static/js/runtime-main.2f6b6faf.js",
-    "runtime-main.js.map": "/nicopoore.github.io/static/js/runtime-main.2f6b6faf.js.map",
-    "static/js/2.b9973a35.chunk.js": "/nicopoore.github.io/static/js/2.b9973a35.chunk.js",
-    "static/js/2.b9973a35.chunk.js.map": "/nicopoore.github.io/static/js/2.b9973a35.chunk.js.map",
-    "static/js/3.bb649149.chunk.js": "/nicopoore.github.io/static/js/3.bb649149.chunk.js",
-    "static/js/3.bb649149.chunk.js.map": "/nicopoore.github.io/static/js/3.bb649149.chunk.js.map",
-    "index.html": "/nicopoore.github.io/index.html",
-    "static/css/main.ce183463.chunk.css.map": "/nicopoore.github.io/static/css/main.ce183463.chunk.css.map",
-    "static/js/2.b9973a35.chunk.js.LICENSE.txt": "/nicopoore.github.io/static/js/2.b9973a35.chunk.js.LICENSE.txt"
+    "main.css": "/www.nicolaspoore.com/static/css/main.ce183463.chunk.css",
+    "main.js": "/www.nicolaspoore.com/static/js/main.85871693.chunk.js",
+    "main.js.map": "/www.nicolaspoore.com/static/js/main.85871693.chunk.js.map",
+    "runtime-main.js": "/www.nicolaspoore.com/static/js/runtime-main.21b7bf4f.js",
+    "runtime-main.js.map": "/www.nicolaspoore.com/static/js/runtime-main.21b7bf4f.js.map",
+    "static/js/2.b9973a35.chunk.js": "/www.nicolaspoore.com/static/js/2.b9973a35.chunk.js",
+    "static/js/2.b9973a35.chunk.js.map": "/www.nicolaspoore.com/static/js/2.b9973a35.chunk.js.map",
+    "static/js/3.bb649149.chunk.js": "/www.nicolaspoore.com/static/js/3.bb649149.chunk.js",
+    "static/js/3.bb649149.chunk.js.map": "/www.nicolaspoore.com/static/js/3.bb649149.chunk.js.map",
+    "index.html": "/www.nicolaspoore.com/index.html",
+    "static/css/main.ce183463.chunk.css.map": "/www.nicolaspoore.com/static/css/main.ce183463.chunk.css.map",
+    "static/js/2.b9973a35.chunk.js.LICENSE.txt": "/www.nicolaspoore.com/static/js/2.b9973a35.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f6b6faf.js",
+    "static/js/runtime-main.21b7bf4f.js",
     "static/js/2.b9973a35.chunk.js",
     "static/css/main.ce183463.chunk.css",
-    "static/js/main.7888b2aa.chunk.js"
+    "static/js/main.85871693.chunk.js"
   ]
 }
