@@ -52,6 +52,13 @@ const enContent = {
           to: "Present"
         },
         desc: ''
+      },
+      {
+        id: "coburg",
+        title: "Kaeser Germany HQ",
+        subtitle: "Engineering & Management Processes Training",
+        date: "2019",
+        desc: ''
       }
     ],
     personalEdArray: [
@@ -418,6 +425,13 @@ const esContent = {
           from: "2017",
           to: "Presente"
         },
+        desc: ''
+      },
+      {
+        id: "coburg",
+        title: "Kaeser Alemania HQ",
+        subtitle: "Entrenamiento de procesos de Ingeniería y Admin.",
+        date: "2019",
         desc: ''
       }
     ],
