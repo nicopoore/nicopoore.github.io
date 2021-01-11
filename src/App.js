@@ -7,7 +7,7 @@ const enContent = {
   about: [
     "I'm a full stack developer, currently deepening my knowledge of Advanced JavaScript Development, particularly frameworks with a MERN stack focus, after having finished two degrees in Javascript web development.",
     "Constantly focusing on design, I'm experienced in Web Development, 3D modelling, Adobe Creative Suite, with a strong passion for programming and innovation. I have Full Stack Web Development Certifications from FCC and EducacionIT.",
-    "In my free time I love watching movies (you can find me on Letterboxd!), playing the piano (plus sucking at the guitar), programming, and learning."
+    "In my free time I love watching movies, playing the piano (plus sucking at the guitar), programming, and learning."
   ],
   timelines: {
     experienceArray: [
@@ -123,6 +123,24 @@ const enContent = {
           "tools"
         ],
         level: "advanced"
+      },
+      {
+        code: "ts",
+        name: "TypeScript",
+        keywords: [
+          "programming",
+          "frontend",
+          "backend"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "git",
+        name: "Git",
+        keywords: [
+          "programming"
+        ],
+        level: "intermediate"
       },
       {
         code: "node",
@@ -381,7 +399,7 @@ const esContent = {
   about: [
     "Soy desarrollador full-stack, actualmente profundizando mis conocimientos de Desarrollo Avanzado Javascript, especialmente focalizado a frameworks de stack MERN, después de haber terminado dos carreras de desarrollo en Javascript junto con diversos proyectos.",
     "Me caracterizo por una tendencia al diseño -calificado en modelado 3D, desarrollo web y Adobe Creative Suite- y el desarrollo de herramientas para solucionar problemas. Cuento con certificados de desarrollo web Full Stack de FCC y EducacionIT.",
-    "En mi tiempo libre me encanta ver peliculas (estoy en Letterboxd!), tocar el piano (o fallar intentando tocar la guitarra), programar y aprender."
+    "En mi tiempo libre me encanta ver peliculas, tocar el piano (o fallar intentando tocar la guitarra), programar y aprender."
   ],
   timelines: {
     experienceArray: [
@@ -410,7 +428,7 @@ const esContent = {
       {
         id: "sanlu",
         title: "St. Luke's College",
-        subtitle: "Título Secundario en Exactas",
+        subtitle: "Bachillerato en Ciencias Exactas",
         date: {
           from: "2011",
           to: "2016"
@@ -497,6 +515,24 @@ const esContent = {
           "tools"
         ],
         level: "advanced"
+      },
+      {
+        code: "ts",
+        name: "TypeScript",
+        keywords: [
+          "programming",
+          "frontend",
+          "backend"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "git",
+        name: "Git",
+        keywords: [
+          "programming"
+        ],
+        level: "intermediate"
       },
       {
         code: "node",
