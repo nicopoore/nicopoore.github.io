@@ -135,6 +135,15 @@ const enContent = {
         level: "intermediate"
       },
       {
+        code: "sass",
+        name: "Sass",
+        keywords: [
+          "programming",
+          "frontend"
+        ],
+        level: "intermediate"
+      },
+      {
         code: "git",
         name: "Git",
         keywords: [
@@ -523,6 +532,15 @@ const esContent = {
           "programming",
           "frontend",
           "backend"
+        ],
+        level: "intermediate"
+      },
+      {
+        code: "sass",
+        name: "Sass",
+        keywords: [
+          "programming",
+          "frontend"
         ],
         level: "intermediate"
       },
