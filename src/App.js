@@ -400,7 +400,23 @@ const enContent = {
       ],
       url: "https://secret-cove-94553.herokuapp.com/",
       repo: "https://github.com/nicopoore/exercise-tracker"
-    }
+    },
+    {
+      id: 13,
+      name: "City Tracker (work in progress)",
+      tags: [
+        "front-end",
+        "back-end",
+        "html",
+        "typescript",
+        "react",
+        "material-ui",
+        "mongodb",
+        "next.js",
+      ],
+      url: "",
+      repo: "https://github.com/nicopoore/city-tracker"
+    },
   ]
 }
 
@@ -801,6 +817,22 @@ const esContent = {
       ],
       url: "https://secret-cove-94553.herokuapp.com/",
       repo: "https://github.com/nicopoore/exercise-tracker"
+    },
+    {
+      id: 13,
+      name: "Tracker de ciudades (en progreso)",
+      tags: [
+        "front-end",
+        "back-end",
+        "html",
+        "typescript",
+        "react",
+        "material-ui",
+        "mongodb",
+        "next.js",
+      ],
+      url: "",
+      repo: "https://github.com/nicopoore/city-tracker"
     }
   ]
 }

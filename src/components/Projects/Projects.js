@@ -35,8 +35,8 @@ class Projects extends Component {
   }
 
   render() {
-    const filterArray = this.props.projectFilter.length === 0 ? ['javascript'] : this.props.projectFilter
-    const renderedProjects = this.props.projects.filter(project => filterArray.every(val => project.tags.indexOf(val) !== -1) && project.id !== 1 && project.id !== 9 && project.id !== 11).reverse().map((item) => this.renderProjects(item))
+    const filterArray = this.props.projectFilter.length === 0 ? [] : this.props.projectFilter
+    const renderedProjects = this.props.projects.filter(project => filterArray.every(val => project.tags.indexOf(val) !== -1) && project.id !== 1 && project.id !== 9 && project.id !== 11 && project.id !== 8).reverse().map((item) => this.renderProjects(item))
     const renderedFilter = this.props.projectFilter.reverse().map(item => this.renderTag(item))
     return (
       <section className="Projects" id="projects">

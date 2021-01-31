@@ -28,31 +28,31 @@ class About extends Component {
         showSidebarMain: false,
         activeSection: 'about-link'
       })
-    } else if (scrolled >= .166 && scrolled < .333) {
+    } else if (scrolled >= .166 && scrolled < .3) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'work-link'
       })
-    } else if (scrolled >= .333 && scrolled < .5) {
+    } else if (scrolled >= .3 && scrolled < .5) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'education-link'
       })
-    } else if (scrolled >= .5 && scrolled < .666) {
+    } else if (scrolled >= .5 && scrolled < .7) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'skills-link'
       })
-    } else if (scrolled >= .666 && scrolled < .833) {
+    } else if (scrolled >= .7 && scrolled < .9) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
         activeSection: 'projects-link'
       })
-    } else if (scrolled >= .833 && scrolled < 1) {
+    } else if (scrolled >= .9 && scrolled < 1) {
       this.props.dispatch({
         type: 'TOGGLE_SECTION',
         showSidebarMain: true,
