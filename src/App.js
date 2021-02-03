@@ -74,7 +74,7 @@ const enContent = {
         title: "EducacionIT",
         subtitle: "JavaScript Advanced Developer",
         date: "2020",
-        desc: "Currently finishing the Advanced Full Stack Javascript Developer degree in EducaciónIT, which includes React, Node, OOP, Progressive Web Apps, among other classes."
+        desc: "Advanced Full Stack Javascript Developer degree in EducaciónIT, which includes React, Node, OOP, Progressive Web Apps courses, among others."
       },
       {
         id: "fcc",
@@ -491,7 +491,7 @@ const esContent = {
         title: "EducacionIT",
         subtitle: "Desarrollador Avanzado JavaScript",
         date: "2020",
-        desc: "Actualmente terminando la carrera de desarrollador avanzado full stack JavaScript en EducacionIT, que incluye cursos en React, Node, OOP, Progressive Web Apps, entre otros."
+        desc: "Carrera completa de desarrollador avanzado full stack JavaScript en EducacionIT, que incluye cursos en React, Node, OOP, Progressive Web Apps, entre otros."
       },
       {
         id: "fcc",

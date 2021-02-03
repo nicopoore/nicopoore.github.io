@@ -86,7 +86,7 @@ class Sidebar extends Component {
         </div>
         <div className="chivo" id="copyright">
           <p><a href="https://github.com/nicopoore/nicopoore.github.io" target="_blank" rel="noreferrer">{this.props.lang === 'en' ? 'Created by' : 'Creado por'} Nicolás Cedric Poore</a></p>
-          <p><a href="https://github.com/nicopoore/nicopoore.github.io/blob/main/LICENSE" target="_blank" rel="noreferrer">GNU General Public License v3.0 &#169; 2021</a></p>
+          <p><a href="https://github.com/nicopoore/nicopoore.github.io/blob/main/LICENSE" target="_blank" rel="noreferrer">GNU AGP License v3.0 &#169; 2021</a></p>
         </div>
       </div>
     )
