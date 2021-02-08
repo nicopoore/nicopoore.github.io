@@ -403,7 +403,22 @@ const enContent = {
     },
     {
       id: 13,
-      name: "City Tracker (work in progress)",
+      name: "Argentina vaccinated",
+      tags: [
+        "front-end",
+        "back-end",
+        "html",
+        "typescript",
+        "react",
+        "material-ui",
+        "next.js",
+      ],
+      url: "https://argentina-vaccines.vercel.app",
+      repo: "https://github.com/nicopoore/argentina-vaccines"
+    },
+    {
+      id: 14,
+      name: "City Tracker",
       tags: [
         "front-end",
         "back-end",
@@ -820,7 +835,22 @@ const esContent = {
     },
     {
       id: 13,
-      name: "Tracker de ciudades (en progreso)",
+      name: "Argentina vacunada",
+      tags: [
+        "front-end",
+        "back-end",
+        "html",
+        "typescript",
+        "react",
+        "material-ui",
+        "next.js",
+      ],
+      url: "https://argentina-vaccines.vercel.app",
+      repo: "https://github.com/nicopoore/argentina-vaccines"
+    },
+    {
+      id: 14,
+      name: "Tracker de ciudades",
       tags: [
         "front-end",
         "back-end",
@@ -831,7 +861,7 @@ const esContent = {
         "mongodb",
         "next.js",
       ],
-      url: "",
+      url: "https://city-tracker.vercel.app",
       repo: "https://github.com/nicopoore/city-tracker"
     }
   ]
