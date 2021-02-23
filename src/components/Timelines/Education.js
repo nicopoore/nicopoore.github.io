@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import TimelineItem from './TimelineItem'
 
-class Education extends Component {
+const Education = (props) => {
 
-  renderEducation = (item) => {
+  const renderEducation = (item) => {
     return (
       <TimelineItem
         id={item.id}
@@ -17,23 +17,21 @@ class Education extends Component {
     )
   }
 
-  renderedFormal = () => this.props.formalEdArray.slice().reverse().map(item => this.renderEducation(item))
-  renderedPersonal = () => this.props.personalEdArray.slice().reverse().map(item => this.renderEducation(item))
+  const renderedFormal = () => props.formalEdArray.slice().reverse().map(item => renderEducation(item))
+  const renderedPersonal = () => props.personalEdArray.slice().reverse().map(item => renderEducation(item))
 
-  render() {
-    return (
-      <section className="Education" id="education">
-        <h2 className="subheading">{this.props.lang === 'en' ? 'Formal Education' : 'Educación formal'}</h2>
-        <ol>
-          {this.renderedFormal()}
-        </ol>
-        <h2 className="subheading">{this.props.lang === 'en' ? 'Personal Education' : 'Educación personal'}</h2>
-        <ol>
-          {this.renderedPersonal()}
-        </ol>
-      </section>
-    )
-  }
+  return (
+    <section className="Education" id="education">
+      <h2 className="subheading">{props.lang === 'en' ? 'Formal Education' : 'Educación formal'}</h2>
+      <ol>
+        {renderedFormal()}
+      </ol>
+      <h2 className="subheading">{props.lang === 'en' ? 'Personal Education' : 'Educación personal'}</h2>
+      <ol>
+        {renderedPersonal()}
+      </ol>
+    </section>
+  )
 }
 
 const mapStateToProps = (state) => ({

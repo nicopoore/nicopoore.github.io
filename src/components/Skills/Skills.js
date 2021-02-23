@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import SkillItem from './SkillItem'
 import LangItem from './LangItem'
 
-class Skills extends Component {
+const Skills = (props) => {
 
-  renderSkill = (item) => {
+  const renderSkill = (item) => {
     return (
       <SkillItem 
         key={item.code}
@@ -15,7 +15,7 @@ class Skills extends Component {
     )
   }
 
-  renderLang = (item) => {
+  const renderLang = (item) => {
     return (
       <LangItem 
         key={item.code}
@@ -27,55 +27,50 @@ class Skills extends Component {
     )
   }
 
-  render() {
-    const advancedSkills = this.props.technical.filter(skill => skill.level === "advanced").map(item => this.renderSkill(item))
-    const intermediateSkills = this.props.technical.filter(skill => skill.level === "intermediate").map(item => this.renderSkill(item))
-    const basicSkills = this.props.technical.filter(skill => skill.level === "basic").map(item => this.renderSkill(item))
-    const langs = this.props.languages.map(item => this.renderLang(item))
-    return (
-      <section className="Skills" id="skills">
-        <h2 className="subheading">{this.props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
+  const advancedSkills = props.technical.filter(skill => skill.level === "advanced").map(item => renderSkill(item))
+  const intermediateSkills = props.technical.filter(skill => skill.level === "intermediate").map(item => renderSkill(item))
+  const basicSkills = props.technical.filter(skill => skill.level === "basic").map(item => renderSkill(item))
+  const langs = props.languages.map(item => renderLang(item))
+  return (
+    <section className="Skills" id="skills">
+      <h2 className="subheading">{props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
 
-        <div>
-          <h3>{this.props.lang === 'en' ? 'Technical Skills' : 'Conocimientos técnicos'}</h3>
-          <ul>
+      <div>
+        <h3>{props.lang === 'en' ? 'Technical Skills' : 'Conocimientos técnicos'}</h3>
+        <ul>
 
-            <li className="highFluency">
-              <p>
-                <span>{this.props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
-              </p>
-              {advancedSkills}
-            </li>
+          <li className="highFluency">
+            <p>
+              <span>{props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
+            </p>
+            {advancedSkills}
+          </li>
 
-            <li className="midFluency">
-              <p>
-                <span>{this.props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
-              </p>
-              {intermediateSkills}
-            </li>
+          <li className="midFluency">
+            <p>
+              <span>{props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
+            </p>
+            {intermediateSkills}
+          </li>
 
-            <li className="lowFluency">
-              <p>
-                <span>{this.props.lang === 'en' ? 'Basic' : 'Básico'}</span>
-              </p>
-              {basicSkills}
-            </li>
+          <li className="lowFluency">
+            <p>
+              <span>{props.lang === 'en' ? 'Basic' : 'Básico'}</span>
+            </p>
+            {basicSkills}
+          </li>
 
-          </ul>
-        </div>
+        </ul>
+      </div>
 
-
-
-        <div>
-          <h3>{this.props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
-          <ul>
-            {langs}
-          </ul>
-        </div>
-
-      </section>
-    )
-  }
+      <div>
+        <h3>{props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
+        <ul>
+          {langs}
+        </ul>
+      </div>
+    </section>
+  )
 }
 
 const mapStateToProps = (state) => ({

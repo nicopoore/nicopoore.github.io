@@ -3,36 +3,34 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faFilter } from '@fortawesome/free-solid-svg-icons'
 
-class ProjectItem extends Component {
+const ProjectItem = (props) => {
 
-  addToFilter = () => {
-    if (!this.props.projectFilter.includes(this.props.tag)) {
-      this.props.dispatch({
+  const addToFilter = () => {
+    if (!props.projectFilter.includes(props.tag)) {
+      props.dispatch({
         type: 'ADD_FILTER',
-        tag: this.props.tag
+        tag: props.tag
       })
     }
   }
 
-  removeFromFilter = () => {
-    const updatedFilter = [...this.props.projectFilter]
-    const index = updatedFilter.indexOf(this.props.tag)
+  const removeFromFilter = () => {
+    const updatedFilter = [...props.projectFilter]
+    const index = updatedFilter.indexOf(props.tag)
     updatedFilter.splice(index, 1)
-    this.props.dispatch({
+    props.dispatch({
       type: 'REMOVE_FILTER',
       projectFilter: updatedFilter
     })
   }
 
-  render() {
-    const type = this.props.type
-    return (
-      <button onClick={this.addToFilter} className={`chivo piTag ${this.props.tag} ${type === 'remove' ? 'addedTag' : ''}`}>
-        {type === 'add' && <span className="filter-icon"><FontAwesomeIcon icon={faFilter} /></span>} <span className="piTagText">{this.props.tag}</span>
-        {type === 'remove' && <span className="x-icon" onClick={this.removeFromFilter}><FontAwesomeIcon icon={faTimes} /></span>}
-      </button>
-    )
-  }
+  const type = props.type
+  return (
+    <button onClick={addToFilter} className={`chivo piTag ${props.tag} ${type === 'remove' ? 'addedTag' : ''}`}>
+      {type === 'add' && <span className="filter-icon"><FontAwesomeIcon icon={faFilter} /></span>} <span className="piTagText">{props.tag}</span>
+      {type === 'remove' && <span className="x-icon" onClick={removeFromFilter}><FontAwesomeIcon icon={faTimes} /></span>}
+    </button>
+  )
 }
 
 const mapStateToProps = (state) => ({

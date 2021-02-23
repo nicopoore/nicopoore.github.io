@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import TimelineItem from './TimelineItem'
 
-class Experience extends Component {
+const Experience = (props) => {
 
-  renderExperiences = (item) => {
+  const renderExperiences = (item) => {
     return (
       <TimelineItem
         id={item.id}
@@ -17,21 +17,17 @@ class Experience extends Component {
     )
   }
 
-  rendered = () => this.props.experienceArray.slice().reverse().map(item => this.renderExperiences(item))
+  const rendered = () => props.experienceArray.slice().reverse().map(item => renderExperiences(item))
 
-  render() {
-    return (
-      <section className="Experience" id="work">
-        <h2 className="subheading">{this.props.lang === 'en' ? 'Work Experience' : 'Experiencia laboral'}</h2>
-        <ol>
-          {this.rendered()}
-        </ol>
-      </section>
-    )
-  }
+  return (
+    <section className="Experience" id="work">
+      <h2 className="subheading">{props.lang === 'en' ? 'Work Experience' : 'Experiencia laboral'}</h2>
+      <ol>
+        {rendered()}
+      </ol>
+    </section>
+  )
 }
-
-/**/
 
 const mapStateToProps = (state) => ({
   lang: state.lang,

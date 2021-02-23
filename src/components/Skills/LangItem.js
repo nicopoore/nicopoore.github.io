@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 
-class LangItem extends Component {
+const LangItem = (props) => {
 
-  fluencyColor = (level) => {
+  const fluencyColor = (level) => {
     if (level >= 66) {
       return "highFluency"
     } else if (level >= 33 && level < 66) {
@@ -13,16 +12,14 @@ class LangItem extends Component {
     }
   }
 
-  render() {
-    return (
-      <li className={`${this.fluencyColor(this.props.level)}`}>
-        <p>
-          <span>{this.props.name}</span> - <span>{this.props.fluency}</span>
-        </p>
-        <p className="chivo langDesc">{this.props.desc}</p>
-      </li>
-    )
-  }
+  return (
+    <li className={`${fluencyColor(props.level)}`}>
+      <p>
+        <span>{props.name}</span> - <span>{props.fluency}</span>
+      </p>
+      <p className="chivo langDesc">{props.desc}</p>
+    </li>
+  )
 }
 
-export default connect(null)(LangItem)
+export default LangItem

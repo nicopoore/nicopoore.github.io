@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProjectTag from './ProjectTag'
 
-class ProjectItem extends Component {
+const ProjectItem = (props) => {
 
-  renderTag = (tag) => {
+  const renderTag = (tag) => {
     return (
       <ProjectTag 
         key={tag}
@@ -14,12 +14,11 @@ class ProjectItem extends Component {
     )
   }
 
-  render() {
-    const renderedTags = this.props.tags.map(tag => this.renderTag(tag))
+    const renderedTags = props.tags.map(tag => renderTag(tag))
     return (
-        <div id={this.props.key}>
+        <div id={props.key}>
           <div> {/* Title Wrapper */}
-            <p><a href={this.props.repo}>{this.props.key} {this.props.name}</a></p>
+            <p><a href={props.repo}>{props.key} {props.name}</a></p>
           </div>
           <div> {/* Tags Wrapper */}
             <div>
@@ -28,7 +27,6 @@ class ProjectItem extends Component {
           </div>
         </div>
     )
-  }
 }
 
 export default connect(null)(ProjectItem)

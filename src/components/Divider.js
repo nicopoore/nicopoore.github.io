@@ -7,4 +7,4 @@ const Divider = (props) => {
   )
 }
 
-export default connect(null)(Divider)
+export default Divider

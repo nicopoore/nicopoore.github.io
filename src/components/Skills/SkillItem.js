@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class SkillItem extends Component {
+const SkillItem = (props) => (
+  <p className="chivo">
+    - {props.name}
+  </p>
+)
 
-  render() {
-    return (
-        <p className="chivo">
-          - {this.props.name}
-        </p>
-    )
-  }
-}
-
-export default connect(null)(SkillItem)
+export default SkillItem

@@ -3,26 +3,20 @@ import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-class Hamburger extends Component {
-  constructor(props) {
-    super(props)
-    this.handleClick = this.handleClick.bind(this)
-  }
+const Hamburger = (props) => {
 
-  handleClick = () => {
-    this.props.dispatch({
+  const handleClick = () => {
+    props.dispatch({
       type: 'TOGGLE_SIDEBAR',
-      showSidebarMobile: !this.props.showSidebarMobile
+      showSidebarMobile: !props.showSidebarMobile
     })
   }
 
-  render() {
-    return (
-      <span className="lg-hidden sm-shown" id="hamburger-span" onClick={this.handleClick}>
-        <FontAwesomeIcon icon={faBars} />
-      </span>
-    )
-  }
+  return (
+    <span className="lg-hidden sm-shown" id="hamburger-span" onClick={handleClick}>
+      <FontAwesomeIcon icon={faBars} />
+    </span>
+  )
 }
 
 const mapStateToProps = (state) => ({

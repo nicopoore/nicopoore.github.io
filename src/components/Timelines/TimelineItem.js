@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class TimelineItem extends Component {
+const TimelineItem = (props) => {
 
-  date = () => {
-    if (this.props.date.hasOwnProperty('from')) {
-      return `${this.props.date.from} - ${this.props.date.to}`
+  const date = () => {
+    if (props.date.hasOwnProperty('from')) {
+      return `${props.date.from} - ${props.date.to}`
     } else {
-      return this.props.date
+      return props.date
     }
   }
 
-  render() {
-    return (
-      <li className="timelineItem chivo" id={this.props.id}>
-        <h5 className="sm-hidden lg-shown"><span>{this.props.title}</span> — <span>{this.props.subtitle}</span></h5>
-        <h5 className="sm-shown lg-hidden"><span>{this.props.title}</span><br /><span>{this.props.subtitle}</span></h5>
-        <p>{this.date()}</p>
-        <p>{this.props.desc}</p>
-      </li>
-    )
-  }
+  return (
+    <li className="timelineItem chivo" id={props.id}>
+      <h5 className="sm-hidden lg-shown"><span>{props.title}</span> — <span>{props.subtitle}</span></h5>
+      <h5 className="sm-shown lg-hidden"><span>{props.title}</span><br /><span>{props.subtitle}</span></h5>
+      <p>{date()}</p>
+      <p>{props.desc}</p>
+    </li>
+  )
 }
 
-export default connect(null)(TimelineItem)
+export default TimelineItem

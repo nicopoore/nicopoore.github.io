@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import ProjectItem from './ProjectItem'
 import ProjectTag from './ProjectTag'
 
-class Projects extends Component {
+const Projects = (props) => {
 
-  renderProjects = (item) => {
+  const renderProjects = (item) => {
     return (
       <ProjectItem 
         key={item.id}
@@ -19,7 +19,7 @@ class Projects extends Component {
     )
   }
 
-  renderTag = (item) => {
+  const renderTag = (item) => {
     return (
       <ProjectTag 
         tag={item}
@@ -28,29 +28,28 @@ class Projects extends Component {
     )
   }
 
-  resetFilter = () => {
-    this.props.dispatch({
+  const resetFilter = () => {
+    props.dispatch({
       type: 'RESET_FILTER',
     })
   }
 
-  render() {
-    const filterArray = this.props.projectFilter.length === 0 ? [] : this.props.projectFilter
-    const renderedProjects = this.props.projects.filter(project => filterArray.every(val => project.tags.indexOf(val) !== -1) && project.id !== 1 && project.id !== 9 && project.id !== 11 && project.id !== 8 && project.id !== 4).reverse().map((item) => this.renderProjects(item))
-    const renderedFilter = this.props.projectFilter.reverse().map(item => this.renderTag(item))
-    return (
-      <section className="Projects" id="projects">
-        <h2 className="subheading">{this.props.lang === 'en' ? 'Projects' : 'Proyectos'}</h2>
-        <div id="appliedFilters" style={{marginBottom: (this.props.projectFilter.length !== 0 ? -2.1 : 0) + "rem"}}>
-          {renderedFilter}
-          {this.props.projectFilter.length !== 0 && <span className="resetFilterButton" onClick={this.resetFilter}><FontAwesomeIcon icon={faEraser} /></span>}
-        </div>
-        <div className="chivo" id="projectsWrapper">
-          {renderedProjects}
-        </div>
-      </section>
-    )
-  }
+  const filterArray = props.projectFilter.length === 0 ? [] : props.projectFilter
+  const renderedProjects = props.projects.filter(project => filterArray.every(val => project.tags.indexOf(val) !== -1) && project.id !== 1 && project.id !== 9 && project.id !== 11 && project.id !== 8 && project.id !== 4).reverse().map((item) => renderProjects(item))
+  const renderedFilter = props.projectFilter.reverse().map(item => renderTag(item))
+
+  return (
+    <section className="Projects" id="projects">
+      <h2 className="subheading">{props.lang === 'en' ? 'Projects' : 'Proyectos'}</h2>
+      <div id="appliedFilters" style={{marginBottom: (props.projectFilter.length !== 0 ? -2.1 : 0) + "rem"}}>
+        {renderedFilter}
+        {props.projectFilter.length !== 0 && <span className="resetFilterButton" onClick={resetFilter}><FontAwesomeIcon icon={faEraser} /></span>}
+      </div>
+      <div className="chivo" id="projectsWrapper">
+        {renderedProjects}
+      </div>
+    </section>
+  )
 }
 
 const mapStateToProps = (state) => ({
