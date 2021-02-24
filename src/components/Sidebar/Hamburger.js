@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Hamburger = (props) => {
 
   const handleClick = () => {
-    props.dispatch({
-      type: 'TOGGLE_SIDEBAR',
-      showSidebarMobile: !props.showSidebarMobile
-    })
+    props.setSidebarIsOpen(() => !props.sidebarIsOpen)
   }
 
   return (
@@ -19,8 +15,4 @@ const Hamburger = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({
-  showSidebarMobile: state.showSidebarMobile
-})
-
-export default connect(mapStateToProps)(Hamburger)
+export default Hamburger

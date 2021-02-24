@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import TimelineItem from './TimelineItem'
+import { timelines as enTimelines } from '../../rawData/enContent.json'
+import { timelines as esTimelines } from '../../rawData/esContent.json'
 
 const Experience = (props) => {
 
@@ -16,8 +18,9 @@ const Experience = (props) => {
       />
     )
   }
-
-  const rendered = () => props.experienceArray.slice().reverse().map(item => renderExperiences(item))
+  
+  const timelines = props.lang === 'en' ? enTimelines : esTimelines
+  const rendered = () => timelines.experienceArray.slice().reverse().map(item => renderExperiences(item))
 
   return (
     <section className="Experience" id="work">
@@ -31,7 +34,6 @@ const Experience = (props) => {
 
 const mapStateToProps = (state) => ({
   lang: state.lang,
-  experienceArray: state.timelines.experienceArray
 })
 
 export default connect(mapStateToProps)(Experience)

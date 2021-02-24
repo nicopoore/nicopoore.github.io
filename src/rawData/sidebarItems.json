@@ -1,0 +1,32 @@
+[
+  {
+    "id": "about",
+    "en": "About",
+    "es": "Sobre mi"
+  },
+  {
+    "id": "work",
+    "en": "Work Experience",
+    "es": "Experiencia laboral"
+  },
+  {
+    "id": "education",
+    "en": "Education",
+    "es": "Educación"
+  },
+  {
+    "id": "skills",
+    "en": "Skills",
+    "es": "Conocimientos"
+  },
+  {
+    "id": "projects",
+    "en": "Projects",
+    "es": "Proyectos"
+  },
+  {
+    "id": "contact",
+    "en": "Contact",
+    "es": "Contacto"
+  }
+]

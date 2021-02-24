@@ -11,21 +11,17 @@ const Contact = (props) => {
   const [state, setState] = useState(initialState)
 
   const onNameChange = (e) => {
-	  setState({name: e.target.value})
+	  setState({...state, name: e.target.value})
   }
-
   const onEmailChange = (e) => {
-	  setState({email: e.target.value})
+	  setState({...state, email: e.target.value})
   }
-
   const onMessageChange = (e) => {
-	  setState({message: e.target.value})
+	  setState({...state, message: e.target.value})
   }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    setState({status: 'processing'})
+    setState({...state, status: 'processing'})
 
     emailjs.sendForm('service_63wa0hd', 'template_o4cv7pz', e.target, 'user_fILpx29tAK6zs1Xdr1LUm')
       .then((res) => {
@@ -37,24 +33,34 @@ const Contact = (props) => {
         })
         console.log(res.text)
       }, (err) => {
+        setState({...state, status: 'error'})
         console.log(err.text)
       })
       .then(() => {
         setTimeout(() => {
-          setState({ ...state, status: '' })
+          setState(initialState)
         }, 3000);
       })
   }
 
-  const lang = props.lang
   const submit_text = () => {
     if (state.status === '') {
-      return lang === 'en' ? 'SUBMIT' : 'ENVIAR'
+      return props.lang === 'en' ? 'SUBMIT' : 'ENVIAR'
     } else if (state.status === 'processing') {
-      return lang === 'en' ? 'SENDING...' : 'ENVIANDO...'
+      return props.lang === 'en' ? 'SENDING...' : 'ENVIANDO...'
     } else if (state.status === 'sent') {
-      return lang === 'en' ? 'SENT!' : 'ENVIADO!'
+      return props.lang === 'en' ? 'SENT!' : 'ENVIADO!'
+    } else if (state.status === 'error') {
+      return 'ERROR'
     }
+  }
+
+  const contact = {
+    location: 'Vicente López, Buenos Aires',
+    phone: '15-5526-4650',
+    email: 'nicolaspoore@gmail.com',
+    github: 'https://github.com/nicopoore',
+    linkedin: 'https://www.linkedin.com/in/nicolas-poore/'
   }
 
   return (
@@ -63,25 +69,25 @@ const Contact = (props) => {
       <div>
         <div id="contactForm">
           <form onSubmit={handleSubmit}>
-            <input type="text" value={state.name} onChange={onNameChange} placeholder={lang === 'en' ? 'NAME' : 'NOMBRE'} required name="name" />
+            <input type="text" value={state.name} onChange={onNameChange} placeholder={props.lang === 'en' ? 'NAME' : 'NOMBRE'} required name="name" />
             <input type="email" value={state.email} onChange={onEmailChange} placeholder="EMAIL" required name="email" />
-            <textarea value={state.message} onChange={onMessageChange} placeholder={lang === 'en' ? 'MESSAGE' : 'MENSAJE'} required name="message" />
+            <textarea value={state.message} onChange={onMessageChange} placeholder={props.lang === 'en' ? 'MESSAGE' : 'MENSAJE'} required name="message" />
             <input type="submit" value={submit_text()} />
           </form>
         </div>
         <div id="contactInfo">
           <div>
             <ul className="chivo">
-              <li><FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth />{props.contact.location}</li>
-              <li><FontAwesomeIcon icon={faEnvelope} fixedWidth />{props.contact.email}</li>
-              <li><FontAwesomeIcon icon={faPhoneAlt} fixedWidth />{props.contact.phone}</li>
+              <li><FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth />{contact.location}</li>
+              <li><FontAwesomeIcon icon={faEnvelope} fixedWidth />{contact.email}</li>
+              <li><FontAwesomeIcon icon={faPhoneAlt} fixedWidth />{contact.phone}</li>
             </ul>
           </div>
           <div> {/* Wrapper */}
             <div>
               <ul>
-                <li><a href={props.contact.github} target="_blank" rel="noreferrer"><button><FontAwesomeIcon icon={faGithub} /></button></a></li>
-                <li><a href={props.contact.linkedin} target="_blank" rel="noreferrer"><button><FontAwesomeIcon icon={faLinkedinIn} /></button></a></li>
+                <li><a href={contact.github} target="_blank" rel="noreferrer"><button><FontAwesomeIcon icon={faGithub} /></button></a></li>
+                <li><a href={contact.linkedin} target="_blank" rel="noreferrer"><button><FontAwesomeIcon icon={faLinkedinIn} /></button></a></li>
               </ul>
             </div>
           </div>
@@ -93,7 +99,6 @@ const Contact = (props) => {
 
 const mapStateToProps = (state) => ({
   lang: state.lang,
-  contact: state.contact
 })
 
 export default connect(mapStateToProps)(Contact)

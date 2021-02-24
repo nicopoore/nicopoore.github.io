@@ -1,11 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Sidebar, About, Experience, Education, Skills, Hamburger, Divider, Projects, Contact } from '.'
+import { About, Experience, Education, Skills, Divider, Projects, Contact, FullSidebar } from '.'
 
 const AppChild = (props) => (
   <div className={`App ${props.darkMode ? 'darkMode' : 'lightMode'}`}>
-    <Hamburger />
-    <Sidebar />
+    <FullSidebar />
     <div id="Main">
       <About />
       <Divider type="one" />

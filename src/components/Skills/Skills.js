@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import SkillItem from './SkillItem'
 import LangItem from './LangItem'
+import { skills as enSkills } from '../../rawData/enContent.json'
+import { skills as esSkills } from '../../rawData/esContent.json'
 
 const Skills = (props) => {
 
@@ -27,10 +29,11 @@ const Skills = (props) => {
     )
   }
 
-  const advancedSkills = props.technical.filter(skill => skill.level === "advanced").map(item => renderSkill(item))
-  const intermediateSkills = props.technical.filter(skill => skill.level === "intermediate").map(item => renderSkill(item))
-  const basicSkills = props.technical.filter(skill => skill.level === "basic").map(item => renderSkill(item))
-  const langs = props.languages.map(item => renderLang(item))
+  const skills = props.lang === 'en' ? enSkills : esSkills
+  const advancedSkills = skills.technical.filter(skill => skill.level === "advanced").map(item => renderSkill(item))
+  const intermediateSkills = skills.technical.filter(skill => skill.level === "intermediate").map(item => renderSkill(item))
+  const basicSkills = skills.technical.filter(skill => skill.level === "basic").map(item => renderSkill(item))
+  const langs = skills.languages.map(item => renderLang(item))
   return (
     <section className="Skills" id="skills">
       <h2 className="subheading">{props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
@@ -74,9 +77,7 @@ const Skills = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  lang: state.lang,
-  technical: state.skills.technical,
-  languages: state.skills.languages
+  lang: state.lang
 })
 
 export default connect(mapStateToProps)(Skills)
