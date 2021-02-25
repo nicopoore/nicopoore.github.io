@@ -7,33 +7,10 @@ import { skills as esSkills } from '../../rawData/esContent.json'
 
 const Skills = (props) => {
 
-  const renderSkill = (item) => {
-    return (
-      <SkillItem 
-        key={item.code}
-        name={item.name}
-        level={item.level}
-      />
-    )
-  }
-
-  const renderLang = (item) => {
-    return (
-      <LangItem 
-        key={item.code}
-        name={item.lang}
-        fluency={item.fluency}
-        level={item.level}
-        desc={item.desc}
-      />
-    )
-  }
-
   const skills = props.lang === 'en' ? enSkills : esSkills
-  const advancedSkills = skills.technical.filter(skill => skill.level === "advanced").map(item => renderSkill(item))
-  const intermediateSkills = skills.technical.filter(skill => skill.level === "intermediate").map(item => renderSkill(item))
-  const basicSkills = skills.technical.filter(skill => skill.level === "basic").map(item => renderSkill(item))
-  const langs = skills.languages.map(item => renderLang(item))
+  const advancedSkills = skills.technical.filter(skill => skill.level === "advanced")
+  const intermediateSkills = skills.technical.filter(skill => skill.level === "intermediate")
+  const basicSkills = skills.technical.filter(skill => skill.level === "basic")
   return (
     <section className="Skills" id="skills">
       <h2 className="subheading">{props.lang === 'en' ? 'Skills' : 'Conocimientos'}</h2>
@@ -46,21 +23,39 @@ const Skills = (props) => {
             <p>
               <span>{props.lang === 'en' ? 'Advanced' : 'Avanzado'}</span>
             </p>
-            {advancedSkills}
+            {advancedSkills.map(skill => (
+              <SkillItem 
+                key={skill.code}
+                name={skill.name}
+                level={skill.level}
+              />
+            ))}
           </li>
 
           <li className="midFluency">
             <p>
               <span>{props.lang === 'en' ? 'Intermediate' : 'Intermedio'}</span>
             </p>
-            {intermediateSkills}
+            {intermediateSkills.map(skill => (
+              <SkillItem 
+                key={skill.code}
+                name={skill.name}
+                level={skill.level}
+              />
+            ))}
           </li>
 
           <li className="lowFluency">
             <p>
               <span>{props.lang === 'en' ? 'Basic' : 'Básico'}</span>
             </p>
-            {basicSkills}
+            {basicSkills.map(skill => (
+              <SkillItem 
+                key={skill.code}
+                name={skill.name}
+                level={skill.level}
+              />
+            ))}
           </li>
 
         </ul>
@@ -69,7 +64,15 @@ const Skills = (props) => {
       <div>
         <h3>{props.lang === 'en' ? 'Languages' : 'Lenguajes'}</h3>
         <ul>
-          {langs}
+          {skills.languages.map(lang => (
+            <LangItem 
+              key={lang.code}
+              name={lang.lang}
+              fluency={lang.fluency}
+              level={lang.level}
+              desc={lang.desc}
+            />
+          ))}
         </ul>
       </div>
     </section>
