@@ -405,7 +405,8 @@
         "html",
         "typescript",
         "react",
-        "material-ui",
+        "chakra-ui",
+        "mongodb",
         "next.js"
       ],
       "url": "https://argentina-vaccines.vercel.app",
