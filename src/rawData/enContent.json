@@ -85,122 +85,85 @@
       {
         "code": "htmlcss",
         "name": "HTML5/CSS3",
-        "keywords": [
-          "programming",
-          "frontend"
-        ],
+        "keywords": ["programming", "frontend"],
         "level": "advanced"
       },
       {
         "code": "js",
         "name": "JavaScript",
-        "keywords": [
-          "programming",
-          "frontend",
-          "backend"
-        ],
+        "keywords": ["programming", "frontend", "backend"],
         "level": "advanced"
       },
       {
         "code": "react",
         "name": "ReactJS/Redux",
-        "keywords": [
-          "programming",
-          "frontend"
-        ],
+        "keywords": ["programming", "frontend"],
         "level": "advanced"
       },
       {
         "code": "ps",
         "name": "Adobe Photoshop",
-        "keywords": [
-          "design",
-          "tools"
-        ],
+        "keywords": ["design", "tools"],
         "level": "advanced"
       },
       {
         "code": "ts",
         "name": "TypeScript",
-        "keywords": [
-          "programming",
-          "frontend",
-          "backend"
-        ],
-        "level": "intermediate"
-      },
-      {
-        "code": "sass",
-        "name": "Sass",
-        "keywords": [
-          "programming",
-          "frontend"
-        ],
+        "keywords": ["programming", "frontend", "backend"],
         "level": "intermediate"
       },
       {
         "code": "git",
         "name": "Git",
-        "keywords": [
-          "programming"
-        ],
+        "keywords": ["programming"],
+        "level": "intermediate"
+      },
+      {
+        "code": "jest",
+        "name": "Jest (QA)",
+        "keywords": ["programming", "frontend", "backend", "QA"],
+        "level": "intermediate"
+      },
+      {
+        "code": "rtl",
+        "name": "Testing Library (QA)",
+        "keywords": ["programming", "frontend", "backend", "QA"],
         "level": "intermediate"
       },
       {
         "code": "node",
         "name": "NodeJS",
-        "keywords": [
-          "programming",
-          "backend"
-        ],
+        "keywords": ["programming", "backend"],
+        "level": "intermediate"
+      },
+      {
+        "code": "sass",
+        "name": "Sass",
+        "keywords": ["programming", "frontend"],
         "level": "intermediate"
       },
       {
         "code": "express",
         "name": "Express",
-        "keywords": [
-          "programming",
-          "backend"
-        ],
+        "keywords": ["programming", "backend"],
         "level": "intermediate"
       },
       {
         "code": "mongo",
         "name": "MongoDB/Mongoose",
-        "keywords": [
-          "programming",
-          "backend",
-          "databases"
-        ],
+        "keywords": ["programming", "backend", "databases"],
         "level": "intermediate"
-      },
-      {
-        "code": "chai",
-        "name": "Chai (QA)",
-        "keywords": [
-          "programming",
-          "backend",
-          "QA"
-        ],
-        "level": "basic"
       },
       {
         "code": "python",
         "name": "Python",
-        "keywords": [
-          "programming",
-          "backend"
-        ],
+        "keywords": ["programming", "backend"],
         "level": "basic"
       },
       {
         "code": "django",
         "name": "Django",
-        "keywords": [
-          "programming",
-          "backend",
-          "frontend"
-        ],
+        "keywords": ["programming", "backend", "frontend"],
         "level": "basic"
       }
     ],
@@ -239,25 +202,14 @@
     {
       "id": 1,
       "name": "Technical Documentation Page",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript"
-      ],
+      "tags": ["front-end", "html", "css", "javascript"],
       "url": "https://nicopoore.github.io/technical-documentation/",
       "repo": "https://github.com/nicopoore/technical-documentation"
     },
     {
       "id": 2,
       "name": "Landing Page",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript",
-        "bootstrap"
-      ],
+      "tags": ["front-end", "html", "css", "javascript", "bootstrap"],
       "url": "https://nicopoore.github.io/landing-page/",
       "repo": "https://github.com/nicopoore/landing-page"
     },
@@ -279,80 +231,42 @@
     {
       "id": 4,
       "name": "Markdown Previewer",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript",
-        "react",
-        "redux"
-      ],
+      "tags": ["front-end", "html", "css", "javascript", "react", "redux"],
       "url": "https://nicopoore.github.io/markdown-previewer/",
       "repo": "https://github.com/nicopoore/markdown-previewer"
     },
     {
       "id": 5,
       "name": "Drum Machine",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript",
-        "react",
-        "redux"
-      ],
+      "tags": ["front-end", "html", "css", "javascript", "react", "redux"],
       "url": "https://nicopoore.github.io/drum-machine/",
       "repo": "https://github.com/nicopoore/drum-machine"
     },
     {
       "id": 6,
       "name": "Calculator",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript",
-        "react",
-        "redux"
-      ],
+      "tags": ["front-end", "html", "css", "javascript", "react", "redux"],
       "url": "https://nicopoore.github.io/react-calculator/",
       "repo": "https://github.com/nicopoore/react-calculator"
     },
     {
       "id": 7,
       "name": "Pomodoro Timer",
-      "tags": [
-        "front-end",
-        "html",
-        "css",
-        "javascript",
-        "react",
-        "redux"
-      ],
+      "tags": ["front-end", "html", "css", "javascript", "react", "redux"],
       "url": "https://nicopoore.github.io/react-pomodoro/",
       "repo": "https://github.com/nicopoore/react-pomodoro"
     },
     {
       "id": 8,
       "name": "Timestamp Microservice",
-      "tags": [
-        "back-end",
-        "javascript",
-        "node",
-        "express"
-      ],
+      "tags": ["back-end", "javascript", "node", "express"],
       "url": "https://evening-wave-75791.herokuapp.com/",
       "repo": "https://github.com/nicopoore/timestamp-service"
     },
     {
       "id": 9,
       "name": "Request Header Parser",
-      "tags": [
-        "back-end",
-        "javascript",
-        "node",
-        "express"
-      ],
+      "tags": ["back-end", "javascript", "node", "express"],
       "url": "https://pure-brushlands-16955.herokuapp.com/",
       "repo": "https://github.com/nicopoore/request-header-parser"
     },
@@ -373,12 +287,7 @@
     {
       "id": 11,
       "name": "File Metadata Parser",
-      "tags": [
-        "back-end",
-        "javascript",
-        "node",
-        "express"
-      ],
+      "tags": ["back-end", "javascript", "node", "express"],
       "url": "https://enigmatic-fjord-43448.herokuapp.com/",
       "repo": "https://github.com/nicopoore/file-metadata"
     },
@@ -430,3 +339,4 @@
     }
   ]
 }
+
