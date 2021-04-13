@@ -25,6 +25,16 @@
           "to": "Oct 2020"
         },
         "desc": "Planning, design and execution of efficient compressed air systems, interpreting and capturing the team and the clients’ ideas. Development of the Kaeser Kompressoren Engineering Blog."
+      },
+      {
+        "id": "aerolab",
+        "title": "Aerolab",
+        "subtitle": "JavaScript Development",
+        "date": {
+          "from": "Apr 2021",
+          "to": "Present"
+        },
+        "desc": "Developing web and mobile experiences with JavaScript/TypeScript and React, working with local and overseas clients to realize their visions exactly as they want them done."
       }
     ],
     "formalEdArray": [

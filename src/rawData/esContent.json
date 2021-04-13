@@ -25,6 +25,16 @@
           "to": "Oct 2020"
         },
         "desc": "Planificación, diseño y ejecución de eficientes sistemas de aire comprimido, interpretando y plasmando eficientemente las ideas transmitidas por el equipo de trabajo y los clientes. Desarrollo del blog de ingeniería de Kaeser Kompressoren Argentina."
+      },
+      {
+        "id": "aerolab",
+        "title": "Aerolab",
+        "subtitle": "Desarrollo en JavaScript",
+        "date": {
+          "from": "Apr 2021",
+          "to": "Presente"
+        },
+        "desc": "Desarollo de experiencias web y mobile con JavaScript/TypeScript y React, trabajando con clientes locales y extranjeros para completar sus visiones exactamente como las quieren."
       }
     ],
     "formalEdArray": [
